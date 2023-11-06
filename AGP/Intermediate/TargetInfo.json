@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "AGP",
+			"Path": "C:\\Users\\keege\\Downloads\\Advanced Games Programming Labs\\AGPAssignment34AIIndividual\\Week6StartingPoint\\AGP\\Source\\AGP.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "AGPEditor",
+			"Path": "C:\\Users\\keege\\Downloads\\Advanced Games Programming Labs\\AGPAssignment34AIIndividual\\Week6StartingPoint\\AGP\\Source\\AGPEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
