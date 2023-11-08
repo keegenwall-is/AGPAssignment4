@@ -7,8 +7,6 @@
         "Includes": [
             "d:\\github\\agpassignment4\\agp\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\agp\\definitions.agp.h",
             "d:\\github\\agpassignment4\\agp\\source\\agp\\landscapegenerator.h",
-            "d:\\github\\agpassignment4\\agp\\source\\agp\\wallclass.h",
-            "d:\\github\\agpassignment4\\agp\\intermediate\\build\\win64\\unrealeditor\\inc\\agp\\uht\\wallclass.generated.h",
             "d:\\github\\agpassignment4\\agp\\source\\agp\\room1class.h",
             "d:\\github\\agpassignment4\\agp\\intermediate\\build\\win64\\unrealeditor\\inc\\agp\\uht\\room1class.generated.h",
             "d:\\github\\agpassignment4\\agp\\source\\agp\\room2class.h",
