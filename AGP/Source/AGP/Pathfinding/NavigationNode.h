@@ -12,12 +12,19 @@ class AGP_API ANavigationNode : public AActor
 	GENERATED_BODY()
 
 	friend class UPathfindingSubsystem;
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	ANavigationNode();
 
 	virtual bool ShouldTickIfViewportsOnly() const override;
+	float GScore;
+	float HScore;
+	ANavigationNode* CameFrom;
+	float FScore() const
+	{
+		return GScore + HScore;
+	}
 
 protected:
 	// Called when the game starts or when spawned
@@ -28,7 +35,7 @@ protected:
 	UPROPERTY(VisibleAnywhere)
 	USceneComponent* LocationComponent;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 

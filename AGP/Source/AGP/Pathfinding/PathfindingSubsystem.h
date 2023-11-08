@@ -45,18 +45,24 @@ public:
 	ANavigationNode* FindSecondNearestNode(const FVector& TargetLocation);
 	ANavigationNode* FindThirdNearestNode(const FVector& TargetLocation);
 
+	//void PlaceProceduralNodes(const TArray<FVector>& LandscapeVertexData, int32 MapWidth, int32 MapHeight);
+	void DeleteOtherNodes(TArray<FVector> Path1);
+
 protected:
 
 	TArray<ANavigationNode*> Nodes;
+	TArray<ANavigationNode*> ProcedurallyPlacedNodes;
 
 private:
 
 	void PopulateNodes();
+	//void RemoveAllNodes();
 	ANavigationNode* GetRandomNode();
 	
 
 	ANavigationNode* FindFurthestNode(const FVector& TargetLocation);
 	TArray<FVector> GetPath(ANavigationNode* StartNode, ANavigationNode* EndNode);
 	static TArray<FVector> ReconstructPath(const TMap<ANavigationNode*, ANavigationNode*>& CameFromMap, ANavigationNode* EndNode);
-	
+	TArray<ANavigationNode*> NodesToKeep;
+
 };

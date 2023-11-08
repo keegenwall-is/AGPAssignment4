@@ -54,6 +54,31 @@ void UPathfindingSubsystem::PopulateNodes()
 	}
 }
 
+void UPathfindingSubsystem::DeleteOtherNodes(TArray<FVector> Path1)
+{
+	for (ANavigationNode* node : Nodes)
+	{
+		for (FVector place : Path1)
+		{
+			if (node->GetActorLocation() == place)
+			{
+				NodesToKeep.Add(node);
+			}
+		}
+	}
+
+	for (ANavigationNode* node : Nodes)
+	{
+		if (!NodesToKeep.Contains(node))
+		{
+			UE_LOG(LogTemp, Warning, TEXT("yes"));
+			//Nodes.Remove(node);
+			node->Destroy();
+		}
+	}
+
+}
+
 ANavigationNode* UPathfindingSubsystem::GetRandomNode()
 {
 	// Failure condition
