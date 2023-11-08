@@ -286,10 +286,7 @@ D:\GitHub\AGPAssignment4\AGP\Source\AGP\Room1Class.cpp
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\shared"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\um"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\winrt"
-/FI"D:\GitHub\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\AGPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h"
-/FI"D:\GitHub\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\UnrealEditor\Development\AGP\Definitions.AGP.h"
-/Yu"D:\GitHub\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\AGPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h"
-/Fp"D:\GitHub\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\AGPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h.pch"
+/FI"D:\GitHub\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\UnrealEditor\Development\AGP\Definitions.h"
 /Fo"D:\GitHub\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\UnrealEditor\Development\AGP\Room1Class.cpp.obj"
 /sourceDependencies D:\GitHub\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\UnrealEditor\Development\AGP\Room1Class.cpp.dep.json
 /Zc:inline
