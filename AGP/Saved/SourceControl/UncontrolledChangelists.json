@@ -1,0 +1,18 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/Blueprints/AnimBP_FPArms.uasset",
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/VFX/LaserParticles.uasset",
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/Blueprints/BP_WeaponPickup.uasset",
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/Blueprints/BP_PlayerCharacter.uasset",
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/Levels/ShooterMap.umap",
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/Blueprints/BP_Laser.uasset",
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/VFX/TwirlingLaserSystem.uasset"
+			]
+		}
+	]
+}
