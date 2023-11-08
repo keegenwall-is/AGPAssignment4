@@ -1,17 +1,17 @@
 {
     "Version": "1.2",
     "Data": {
-        "Source": "c:\\users\\keege\\downloads\\advanced games programming labs\\agpassignment34aiindividual\\week6startingpoint\\agp\\source\\agp\\pickups\\pickupbase.cpp",
+        "Source": "d:\\github\\agpassignment4\\agp\\source\\agp\\pickups\\pickupbase.cpp",
         "ProvidedModule": "",
-        "PCH": "c:\\users\\keege\\downloads\\advanced games programming labs\\agpassignment34aiindividual\\week6startingpoint\\agp\\intermediate\\build\\win64\\x64\\agpeditor\\development\\engine\\sharedpch.engine.shadowerrors.inclorderunreal5_1.h.pch",
+        "PCH": "d:\\github\\agpassignment4\\agp\\intermediate\\build\\win64\\x64\\agpeditor\\development\\engine\\sharedpch.engine.shadowerrors.inclorderunreal5_1.h.pch",
         "Includes": [
-            "c:\\users\\keege\\downloads\\advanced games programming labs\\agpassignment34aiindividual\\week6startingpoint\\agp\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\agp\\definitions.agp.h",
-            "c:\\users\\keege\\downloads\\advanced games programming labs\\agpassignment34aiindividual\\week6startingpoint\\agp\\source\\agp\\pickups\\pickupbase.h",
-            "c:\\users\\keege\\downloads\\advanced games programming labs\\agpassignment34aiindividual\\week6startingpoint\\agp\\intermediate\\build\\win64\\unrealeditor\\inc\\agp\\uht\\pickupbase.generated.h",
-            "c:\\program files\\epic games\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\components\\boxcomponent.h",
-            "c:\\program files\\epic games\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
-            "c:\\program files\\epic games\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
-            "c:\\program files\\epic games\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\boxcomponent.generated.h"
+            "d:\\github\\agpassignment4\\agp\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\agp\\definitions.agp.h",
+            "d:\\github\\agpassignment4\\agp\\source\\agp\\pickups\\pickupbase.h",
+            "d:\\github\\agpassignment4\\agp\\intermediate\\build\\win64\\unrealeditor\\inc\\agp\\uht\\pickupbase.generated.h",
+            "d:\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\components\\boxcomponent.h",
+            "d:\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
+            "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\shapecomponent.generated.h",
+            "d:\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\boxcomponent.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

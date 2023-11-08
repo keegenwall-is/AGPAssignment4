@@ -1,13 +1,13 @@
-C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Source\AGP\PickupBounceComponent.h
-C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Source\AGP\AGPGameModeBase.h
-C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Source\AGP\PickupRotatorComponent.h
-C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Source\AGP\RingListener.h
-C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Source\AGP\Characters\BaseCharacter.h
-C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Source\AGP\Pickups\LampPickup.h
-C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Source\AGP\Characters\EnemyCharacter.h
-C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Source\AGP\Characters\HealthComponent.h
-C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Source\AGP\Characters\PlayerCharacter.h
-C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Source\AGP\Pathfinding\NavigationNode.h
-C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Source\AGP\Pathfinding\PathfindingSubsystem.h
-C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Source\AGP\Pickups\WeaponPickup.h
-C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Source\AGP\Pickups\PickupBase.h
+D:\GitHub\AGPAssignment4\AGP\Source\AGP\AGPGameModeBase.h
+D:\GitHub\AGPAssignment4\AGP\Source\AGP\PickupBounceComponent.h
+D:\GitHub\AGPAssignment4\AGP\Source\AGP\PickupRotatorComponent.h
+D:\GitHub\AGPAssignment4\AGP\Source\AGP\RingListener.h
+D:\GitHub\AGPAssignment4\AGP\Source\AGP\Characters\BaseCharacter.h
+D:\GitHub\AGPAssignment4\AGP\Source\AGP\Characters\EnemyCharacter.h
+D:\GitHub\AGPAssignment4\AGP\Source\AGP\Characters\HealthComponent.h
+D:\GitHub\AGPAssignment4\AGP\Source\AGP\Characters\PlayerCharacter.h
+D:\GitHub\AGPAssignment4\AGP\Source\AGP\Pathfinding\NavigationNode.h
+D:\GitHub\AGPAssignment4\AGP\Source\AGP\Pathfinding\PathfindingSubsystem.h
+D:\GitHub\AGPAssignment4\AGP\Source\AGP\Pickups\LampPickup.h
+D:\GitHub\AGPAssignment4\AGP\Source\AGP\Pickups\PickupBase.h
+D:\GitHub\AGPAssignment4\AGP\Source\AGP\Pickups\WeaponPickup.h
