@@ -1,4 +1,4 @@
-"C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Intermediate\Build\Win64\x64\AGPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.cpp"
+C:\Users\keege\OneDrive\Documents\AGPAssignment4\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\AGPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.cpp
 /I .
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\Engine\UHT
 /I ..\Shaders\Shared
@@ -286,10 +286,10 @@
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
-/Yc"C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Intermediate\Build\Win64\x64\AGPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h"
-/Fp"C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Intermediate\Build\Win64\x64\AGPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h.pch"
-/Fo"C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Intermediate\Build\Win64\x64\AGPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h.obj"
-/sourceDependencies "C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Intermediate\Build\Win64\x64\AGPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h.dep.json"
+/Yc"C:\Users\keege\OneDrive\Documents\AGPAssignment4\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\AGPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h"
+/Fp"C:\Users\keege\OneDrive\Documents\AGPAssignment4\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\AGPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h.pch"
+/Fo"C:\Users\keege\OneDrive\Documents\AGPAssignment4\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\AGPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h.obj"
+/sourceDependencies C:\Users\keege\OneDrive\Documents\AGPAssignment4\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\AGPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h.dep.json
 /Zc:inline
 /nologo
 /Oi

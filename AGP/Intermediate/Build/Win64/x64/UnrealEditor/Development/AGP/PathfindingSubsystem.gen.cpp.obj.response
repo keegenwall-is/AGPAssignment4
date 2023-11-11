@@ -1,4 +1,4 @@
-"C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Intermediate\Build\Win64\UnrealEditor\Inc\AGP\UHT\PathfindingSubsystem.gen.cpp"
+C:\Users\keege\OneDrive\Documents\AGPAssignment4\AGPAssignment4\AGP\Intermediate\Build\Win64\UnrealEditor\Inc\AGP\UHT\PathfindingSubsystem.gen.cpp
 /I .
 /I ..\Plugins\EnhancedInput\Intermediate\Build\Win64\UnrealEditor\Inc\EnhancedInput\UHT
 /I ..\Plugins\EnhancedInput\Source\EnhancedInput\Public
@@ -275,8 +275,8 @@
 /I Runtime\MovieSceneCapture\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\AnimationDataController\UHT
 /I Developer\AnimationDataController\Public
-/I "C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Intermediate\Build\Win64\UnrealEditor\Inc\AGP\UHT"
-/I "C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Source"
+/I C:\Users\keege\OneDrive\Documents\AGPAssignment4\AGPAssignment4\AGP\Intermediate\Build\Win64\UnrealEditor\Inc\AGP\UHT
+/I C:\Users\keege\OneDrive\Documents\AGPAssignment4\AGPAssignment4\AGP\Source
 /external:W0
 /external:I ThirdParty\mimalloc\include
 /external:I ThirdParty\LibTiff\Source\Win64
@@ -286,12 +286,12 @@
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
-/FI"C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Intermediate\Build\Win64\x64\AGPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h"
-/FI"C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Intermediate\Build\Win64\x64\UnrealEditor\Development\AGP\Definitions.AGP.h"
-/Yu"C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Intermediate\Build\Win64\x64\AGPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h"
-/Fp"C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Intermediate\Build\Win64\x64\AGPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h.pch"
-/Fo"C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Intermediate\Build\Win64\x64\UnrealEditor\Development\AGP\PathfindingSubsystem.gen.cpp.obj"
-/sourceDependencies "C:\Users\keege\Downloads\Advanced Games Programming Labs\AGPAssignment34AIIndividual\Week6StartingPoint\AGP\Intermediate\Build\Win64\x64\UnrealEditor\Development\AGP\PathfindingSubsystem.gen.cpp.dep.json"
+/FI"C:\Users\keege\OneDrive\Documents\AGPAssignment4\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\AGPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h"
+/FI"C:\Users\keege\OneDrive\Documents\AGPAssignment4\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\UnrealEditor\Development\AGP\Definitions.AGP.h"
+/Yu"C:\Users\keege\OneDrive\Documents\AGPAssignment4\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\AGPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h"
+/Fp"C:\Users\keege\OneDrive\Documents\AGPAssignment4\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\AGPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h.pch"
+/Fo"C:\Users\keege\OneDrive\Documents\AGPAssignment4\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\UnrealEditor\Development\AGP\PathfindingSubsystem.gen.cpp.obj"
+/sourceDependencies C:\Users\keege\OneDrive\Documents\AGPAssignment4\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\UnrealEditor\Development\AGP\PathfindingSubsystem.gen.cpp.dep.json
 /Zc:inline
 /nologo
 /Oi
