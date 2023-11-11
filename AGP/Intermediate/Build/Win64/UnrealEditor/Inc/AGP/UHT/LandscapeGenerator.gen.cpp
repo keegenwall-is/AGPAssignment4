@@ -31,13 +31,10 @@ void EmptyLinkFunctionForGeneratedCodeLandscapeGenerator() {}
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_height_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_DoDebug_MetaData[];
 #endif
-		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_height;
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_width_MetaData[];
-#endif
-		static const UECodeGen_Private::FUnsizedIntPropertyParams NewProp_width;
+		static void NewProp_DoDebug_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_DoDebug;
 		static const UECodeGen_Private::FStructPropertyParams NewProp_Path1_Inner;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Path1_MetaData[];
@@ -72,19 +69,16 @@ void EmptyLinkFunctionForGeneratedCodeLandscapeGenerator() {}
 	};
 #endif
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_height_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_DoDebug_MetaData[] = {
 		{ "Category", "LandscapeGenerator" },
 		{ "ModuleRelativePath", "LandscapeGenerator.h" },
 	};
 #endif
-	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_height = { "height", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ALandscapeGenerator, height), METADATA_PARAMS(Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_height_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_height_MetaData)) };
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_width_MetaData[] = {
-		{ "Category", "LandscapeGenerator" },
-		{ "ModuleRelativePath", "LandscapeGenerator.h" },
-	};
-#endif
-	const UECodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_width = { "width", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ALandscapeGenerator, width), METADATA_PARAMS(Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_width_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_width_MetaData)) };
+	void Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_DoDebug_SetBit(void* Obj)
+	{
+		((ALandscapeGenerator*)Obj)->DoDebug = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_DoDebug = { "DoDebug", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(ALandscapeGenerator), &Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_DoDebug_SetBit, METADATA_PARAMS(Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_DoDebug_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_DoDebug_MetaData)) };
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_Path1_Inner = { "Path1", nullptr, (EPropertyFlags)0x0000000000020000, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_Path1_MetaData[] = {
@@ -116,8 +110,7 @@ void EmptyLinkFunctionForGeneratedCodeLandscapeGenerator() {}
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_pathfindingSubsystem = { "pathfindingSubsystem", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ALandscapeGenerator, pathfindingSubsystem), Z_Construct_UClass_UPathfindingSubsystem_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_pathfindingSubsystem_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_pathfindingSubsystem_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ALandscapeGenerator_Statics::PropPointers[] = {
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_height,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_width,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_DoDebug,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_Path1_Inner,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_Path1,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_Path2_Inner,
@@ -163,9 +156,9 @@ void EmptyLinkFunctionForGeneratedCodeLandscapeGenerator() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ALandscapeGenerator, ALandscapeGenerator::StaticClass, TEXT("ALandscapeGenerator"), &Z_Registration_Info_UClass_ALandscapeGenerator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ALandscapeGenerator), 4131795742U) },
+		{ Z_Construct_UClass_ALandscapeGenerator, ALandscapeGenerator::StaticClass, TEXT("ALandscapeGenerator"), &Z_Registration_Info_UClass_ALandscapeGenerator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ALandscapeGenerator), 492054814U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_4068162458(TEXT("/Script/AGP"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_168001718(TEXT("/Script/AGP"),
 		Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

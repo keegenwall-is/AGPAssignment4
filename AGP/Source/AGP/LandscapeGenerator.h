@@ -39,6 +39,7 @@ protected:
 	void DrawGrid();
 	void DrawPath();
 	void GenerateRooms();
+	void SpawnPathRooms(FVector p);
 	void SpawnRooms();
 	void SpawnCorners();
 	void SpawnEdge1();
@@ -60,11 +61,11 @@ protected:
 
 	virtual bool ShouldTickIfViewportsOnly() const override;
 
-
 	UPROPERTY(EditAnywhere)
-	int height = 5;
-	UPROPERTY(EditAnywhere)
-	int width = 5;
+	bool DoDebug = true;
+	
+	int height = 10;
+	int width = 6;
 
 	UPROPERTY(VisibleAnywhere)
 	TArray<FVector> Path1;

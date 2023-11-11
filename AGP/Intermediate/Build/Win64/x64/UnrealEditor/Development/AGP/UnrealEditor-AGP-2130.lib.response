@@ -1,0 +1,13 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-AGP-2130.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\GitHub\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\AGPEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h.obj"
+"D:\GitHub\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\UnrealEditor\Development\AGP\Module.AGP.cpp.obj"
+"D:\GitHub\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\UnrealEditor\Development\AGP\LandscapeGenerator.cpp.obj"
+"D:\GitHub\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\UnrealEditor\Development\AGP\Default.rc2.res"
+/OUT:"D:\GitHub\AGPAssignment4\AGP\Intermediate\Build\Win64\x64\UnrealEditor\Development\AGP\UnrealEditor-AGP-2130.lib"

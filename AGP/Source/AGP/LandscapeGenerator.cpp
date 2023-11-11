@@ -34,16 +34,17 @@ void ALandscapeGenerator::BeginPlay()
 	pathfindingSubsystem = GetWorld()->GetSubsystem<UPathfindingSubsystem>();
 	Super::BeginPlay();
 	PopulateArray();
-	DrawGrid();
+	if (DoDebug) { DrawGrid(); }
 	DrawPath();
-	//GenerateRooms();
-
+	GenerateRooms();
+	SpawnCorners();
+	SpawnEdge1();
+	SpawnEdge2();
+	SpawnEdge3();
+	SpawnEdge4();
+	
 	//SpawnRooms();
-	//SpawnCorners();
-	//SpawnEdge1();
-	//SpawnEdge2();
-	//SpawnEdge3();
-	//SpawnEdge4();
+	
 	//SpawnTables();
 }
 
@@ -167,65 +168,105 @@ void ALandscapeGenerator::DrawPath()
 			if (!Path2.Contains(p))
 				Path2.Add(p);
 		}
-
-		//adding the right rooms along the paths
-		const UPCGGameInstance* GameInstance = GetWorld()->GetGameInstance<UPCGGameInstance>();
-		for (FVector p : Path1)
-		{
-			GetWorld()->SpawnActor<ARoom4Class>(GameInstance->GetRoom4Class(), p, RandomRotation());
-		}
-
-		for (FVector p : Path2)
-		{
-			if (!Path1.Contains(p))
-			{
-				GetWorld()->SpawnActor<ARoom4Class>(GameInstance->GetRoom4Class(), p, RandomRotation());
-			}
-		}
+		
 	}
-
-	DrawDebugSphere(GetWorld(), StartPoint, 300, 8, FColor::Cyan, true);
-	DrawDebugSphere(GetWorld(), EndPoint, 300, 8, FColor::Cyan, true);
-	pathfindingSubsystem->DeleteOtherNodes(Path1, Path2);
-	
 }
 
 void ALandscapeGenerator::GenerateRooms()
 {
 	const UPCGGameInstance* GameInstance = GetWorld()->GetGameInstance<UPCGGameInstance>();
 
+	if (pathfindingSubsystem)
+	{
+		//adding the right rooms along the paths
+		//making sure that the edges have rooms with walls so the doors dont lead to the void
+		for (FVector p : Path1)
+		{
+			SpawnPathRooms(p);
+		}
+
+		//making sure that the edges have rooms with walls so the doors dont lead to the void
+		for (FVector p : Path2)
+		{
+			if (!Path1.Contains(p))
+			{
+				SpawnPathRooms(p);
+			}
+		}
+
+		if (DoDebug)
+		{
+			DrawDebugSphere(GetWorld(), StartPoint, 300, 8, FColor::Cyan, true);
+			DrawDebugSphere(GetWorld(), EndPoint, 300, 8, FColor::Cyan, true);
+		}
+		pathfindingSubsystem->DeleteOtherNodes(Path1, Path2);
+	}
+	
 	//this section spawns in the rooms for the middle section of the grid
 	//not including the edges and corners
 	//this also excludes the path of rooms so it doesn't override them
 	int t;
 	for (FVector location : SpawnLocations)
 	{
-		if (!Path1.Contains(location))
+		if (!Path1.Contains(location) && !Path2.Contains(location))
 		{
 			t = FMath::RandRange(0, 100);
 			if (t >= 0 && t <= 5)
 			{
-				GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, RandomRotation());
+				GetWorld()->SpawnActor<ARoom5Class>(GameInstance->GetRoom5Class(), location, RandomRotation());
 			}
-			else if (t > 5 && t <= 15)
-			{
-				GetWorld()->SpawnActor<ARoom2Class>(GameInstance->GetRoom2Class(), location, RandomRotation());
-			}
-			else if (t > 15 && t <= 25)
-			{
-				GetWorld()->SpawnActor<ARoom3Class>(GameInstance->GetRoom3Class(), location, RandomRotation());
-			}
-			else if (t > 25 && t <= 90)
+			else if (t > 5 && t <= 10)
 			{
 				GetWorld()->SpawnActor<ARoom4Class>(GameInstance->GetRoom4Class(), location, RandomRotation());
 			}
+			else if (t > 10 && t <= 15)
+			{
+				GetWorld()->SpawnActor<ARoom3Class>(GameInstance->GetRoom3Class(), location, RandomRotation());
+			}
+			else if (t > 15 && t <= 50)
+			{
+				GetWorld()->SpawnActor<ARoom2Class>(GameInstance->GetRoom2Class(), location, RandomRotation());
+			}
 			else
 			{
-				GetWorld()->SpawnActor<ARoom5Class>(GameInstance->GetRoom5Class(), location, RandomRotation());
+				GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, RandomRotation());
 			}
 		}
 	}
+
+	//this spawns in the rest of the edges
+	
 }
+
+void ALandscapeGenerator::SpawnPathRooms(FVector p)
+{
+	const UPCGGameInstance* GameInstance = GetWorld()->GetGameInstance<UPCGGameInstance>();
+
+	if (!Corners.Contains(p))
+	{
+		if (Edges1.Contains(p))
+		{
+			GetWorld()->SpawnActor<ARoom3Class>(GameInstance->GetRoom3Class(), p, FRotator(0, 180, 0));
+		}
+		else if (Edges2.Contains(p))
+		{
+			GetWorld()->SpawnActor<ARoom3Class>(GameInstance->GetRoom3Class(), p, FRotator(0, 270, 0));
+		}
+		else if (Edges3.Contains(p))
+		{
+			GetWorld()->SpawnActor<ARoom3Class>(GameInstance->GetRoom3Class(), p, FRotator(0, 90, 0));
+		}
+		else if (Edges4.Contains(p))
+		{
+			GetWorld()->SpawnActor<ARoom3Class>(GameInstance->GetRoom3Class(), p, FRotator(0, 0, 0));
+		}
+		else
+		{
+			GetWorld()->SpawnActor<ARoom4Class>(GameInstance->GetRoom4Class(), p, RandomRotation());
+		}
+	}
+}
+
 
 
 void ALandscapeGenerator::SpawnRooms()
@@ -351,37 +392,47 @@ void ALandscapeGenerator::SpawnEdge1()
 	const UPCGGameInstance* GameInstance = GetWorld()->GetGameInstance<UPCGGameInstance>();
 	for (FVector location : Edges1)
 	{
-		n = UKismetMathLibrary::RandomInteger(4);
-		if (n == 0)
+		if (!Path1.Contains(location) && !Path2.Contains(location))
 		{
-			int i = UKismetMathLibrary::RandomInteger(3);
-			if (i == 0)
+			n = UKismetMathLibrary::RandomInteger(4);
+			if (n == 0)
 			{
-				GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 0, 0));
+				int i = UKismetMathLibrary::RandomInteger(3);
+				if (i == 0)
+				{
+					GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 0, 0));
+				}
+				else if (i == 1)
+				{
+					GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 90, 0));
+				}
+				else
+				{
+					GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 180, 0));
+				}
 			}
-			else if (i == 1)
+			else if (n == 1)
 			{
-				GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 90, 0));
+				int i = UKismetMathLibrary::RandomInteger(2);
+				if (i == 0)
+				{
+					GetWorld()->SpawnActor<ARoom2Class>(GameInstance->GetRoom2Class(), location, FRotator(0, 90, 0));
+				}
+				else
+				{
+					GetWorld()->SpawnActor<ARoom2Class>(GameInstance->GetRoom2Class(), location, FRotator(0, 180, 0));
+				}
+			}
+			else if (n == 2)
+			{
+				GetWorld()->SpawnActor<ARoom3Class>(GameInstance->GetRoom3Class(), location, FRotator(0, 180, 0));
 			}
 			else
 			{
-				GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 180, 0));
+				GetWorld()->SpawnActor<ARoom5Class>(GameInstance->GetRoom5Class(), location, FRotator(0, 0, 0));
 			}
 		}
-		else if (n == 1)
-		{
-			int i = UKismetMathLibrary::RandomInteger(2);
-			if (i == 0)
-			{
-				GetWorld()->SpawnActor<ARoom2Class>(GameInstance->GetRoom2Class(), location, FRotator(0, 90, 0));
-			}
-			else
-			{
-				GetWorld()->SpawnActor<ARoom2Class>(GameInstance->GetRoom2Class(), location, FRotator(0, 180, 0));
-			}
-		}
-		else if (n == 2) { GetWorld()->SpawnActor<ARoom3Class>(GameInstance->GetRoom3Class(), location, FRotator(0, 180, 0)); }
-		else { GetWorld()->SpawnActor<ARoom5Class>(GameInstance->GetRoom5Class(), location, FRotator(0, 0, 0)); }
+		
 	}
 }
 
@@ -393,37 +444,46 @@ void ALandscapeGenerator::SpawnEdge2()
 	const UPCGGameInstance* GameInstance = GetWorld()->GetGameInstance<UPCGGameInstance>();
 	for (FVector location : Edges2)
 	{
-		n = UKismetMathLibrary::RandomInteger(4);
-		if (n == 0)
+		if (!Path1.Contains(location) && !Path2.Contains(location))
 		{
-			int i = UKismetMathLibrary::RandomInteger(3);
-			if (i == 0)
+			n = UKismetMathLibrary::RandomInteger(4);
+			if (n == 0)
 			{
-				GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 90, 0));
+				int i = UKismetMathLibrary::RandomInteger(3);
+				if (i == 0)
+				{
+					GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 90, 0));
+				}
+				else if (i == 1)
+				{
+					GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 180, 0));
+				}
+				else
+				{
+					GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 270, 0));
+				}
 			}
-			else if (i == 1)
+			else if (n == 1)
 			{
-				GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 180, 0));
+				int i = UKismetMathLibrary::RandomInteger(2);
+				if (i == 0)
+				{
+					GetWorld()->SpawnActor<ARoom2Class>(GameInstance->GetRoom2Class(), location, FRotator(0, 180, 0));
+				}
+				else
+				{
+					GetWorld()->SpawnActor<ARoom2Class>(GameInstance->GetRoom2Class(), location, FRotator(0, 270, 0));
+				}
+			}
+			else if (n == 2)
+			{
+				GetWorld()->SpawnActor<ARoom3Class>(GameInstance->GetRoom3Class(), location, FRotator(0, 270, 0));
 			}
 			else
 			{
-				GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 270, 0));
+				GetWorld()->SpawnActor<ARoom5Class>(GameInstance->GetRoom5Class(), location, FRotator(0, 90, 0));
 			}
 		}
-		else if (n == 1)
-		{
-			int i = UKismetMathLibrary::RandomInteger(2);
-			if (i == 0)
-			{
-				GetWorld()->SpawnActor<ARoom2Class>(GameInstance->GetRoom2Class(), location, FRotator(0, 180, 0));
-			}
-			else
-			{
-				GetWorld()->SpawnActor<ARoom2Class>(GameInstance->GetRoom2Class(), location, FRotator(0, 270, 0));
-			}
-		}
-		else if (n == 2) { GetWorld()->SpawnActor<ARoom3Class>(GameInstance->GetRoom3Class(), location, FRotator(0, 270, 0)); }
-		else { GetWorld()->SpawnActor<ARoom5Class>(GameInstance->GetRoom5Class(), location, FRotator(0, 90, 0)); }
 	}
 }
 
@@ -435,37 +495,46 @@ void ALandscapeGenerator::SpawnEdge3()
 	const UPCGGameInstance* GameInstance = GetWorld()->GetGameInstance<UPCGGameInstance>();
 	for (FVector location : Edges3)
 	{
-		n = UKismetMathLibrary::RandomInteger(4);
-		if (n == 0)
+		if (!Path1.Contains(location) && !Path2.Contains(location))
 		{
-			int i = UKismetMathLibrary::RandomInteger(3);
-			if (i == 0)
+			n = UKismetMathLibrary::RandomInteger(4);
+			if (n == 0)
 			{
-				GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 0, 0));
+				int i = UKismetMathLibrary::RandomInteger(3);
+				if (i == 0)
+				{
+					GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 0, 0));
+				}
+				else if (i == 1)
+				{
+					GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 90, 0));
+				}
+				else
+				{
+					GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 270, 0));
+				}
 			}
-			else if (i == 1)
+			else if (n == 1)
 			{
-				GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 90, 0));
+				int i = UKismetMathLibrary::RandomInteger(2);
+				if (i == 0)
+				{
+					GetWorld()->SpawnActor<ARoom2Class>(GameInstance->GetRoom2Class(), location, FRotator(0, 0, 0));
+				}
+				else
+				{
+					GetWorld()->SpawnActor<ARoom2Class>(GameInstance->GetRoom2Class(), location, FRotator(0, 90, 0));
+				}
+			}
+			else if (n == 2)
+			{
+				GetWorld()->SpawnActor<ARoom3Class>(GameInstance->GetRoom3Class(), location, FRotator(0, 90, 0));
 			}
 			else
 			{
-				GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 270, 0));
+				GetWorld()->SpawnActor<ARoom5Class>(GameInstance->GetRoom5Class(), location, FRotator(0, 90, 0));
 			}
 		}
-		else if (n == 1)
-		{
-			int i = UKismetMathLibrary::RandomInteger(2);
-			if (i == 0)
-			{
-				GetWorld()->SpawnActor<ARoom2Class>(GameInstance->GetRoom2Class(), location, FRotator(0, 0, 0));
-			}
-			else
-			{
-				GetWorld()->SpawnActor<ARoom2Class>(GameInstance->GetRoom2Class(), location, FRotator(0, 90, 0));
-			}
-		}
-		else if (n == 2) { GetWorld()->SpawnActor<ARoom3Class>(GameInstance->GetRoom3Class(), location, FRotator(0, 90, 0)); }
-		else { GetWorld()->SpawnActor<ARoom5Class>(GameInstance->GetRoom5Class(), location, FRotator(0, 90, 0)); }
 	}
 }
 
@@ -477,37 +546,46 @@ void ALandscapeGenerator::SpawnEdge4()
 	const UPCGGameInstance* GameInstance = GetWorld()->GetGameInstance<UPCGGameInstance>();
 	for (FVector location : Edges4)
 	{
-		n = UKismetMathLibrary::RandomInteger(4);
-		if (n == 0)
+		if (!Path1.Contains(location) && !Path2.Contains(location))
 		{
-			int i = UKismetMathLibrary::RandomInteger(3);
-			if (i == 0)
+			n = UKismetMathLibrary::RandomInteger(4);
+			if (n == 0)
 			{
-				GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 0, 0));
+				int i = UKismetMathLibrary::RandomInteger(3);
+				if (i == 0)
+				{
+					GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 0, 0));
+				}
+				else if (i == 1)
+				{
+					GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 180, 0));
+				}
+				else
+				{
+					GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 270, 0));
+				}
 			}
-			else if (i == 1)
+			else if (n == 1)
 			{
-				GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 180, 0));
+				int i = UKismetMathLibrary::RandomInteger(2);
+				if (i == 0)
+				{
+					GetWorld()->SpawnActor<ARoom2Class>(GameInstance->GetRoom2Class(), location, FRotator(0, 0, 0));
+				}
+				else
+				{
+					GetWorld()->SpawnActor<ARoom2Class>(GameInstance->GetRoom2Class(), location, FRotator(0, 270, 0));
+				}
+			}
+			else if (n == 2)
+			{
+				GetWorld()->SpawnActor<ARoom3Class>(GameInstance->GetRoom3Class(), location, FRotator(0, 0, 0));
 			}
 			else
 			{
-				GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, FRotator(0, 270, 0));
+				GetWorld()->SpawnActor<ARoom5Class>(GameInstance->GetRoom5Class(), location, FRotator(0, 0, 0));
 			}
 		}
-		else if (n == 1)
-		{
-			int i = UKismetMathLibrary::RandomInteger(2);
-			if (i == 0)
-			{
-				GetWorld()->SpawnActor<ARoom2Class>(GameInstance->GetRoom2Class(), location, FRotator(0, 0, 0));
-			}
-			else
-			{
-				GetWorld()->SpawnActor<ARoom2Class>(GameInstance->GetRoom2Class(), location, FRotator(0, 270, 0));
-			}
-		}
-		else if (n == 2) { GetWorld()->SpawnActor<ARoom3Class>(GameInstance->GetRoom3Class(), location, FRotator(0, 0, 0)); }
-		else { GetWorld()->SpawnActor<ARoom5Class>(GameInstance->GetRoom5Class(), location, FRotator(0, 0, 0)); }
 	}
 }
 
