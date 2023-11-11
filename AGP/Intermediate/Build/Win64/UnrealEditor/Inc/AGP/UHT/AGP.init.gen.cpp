@@ -17,7 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeAGP_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x4F101413,
+				0x12F3EC70,
 				0x0A2691BC,
 				METADATA_PARAMS(nullptr, 0)
 			};
@@ -25,5 +25,5 @@ void EmptyLinkFunctionForGeneratedCodeAGP_init() {}
 		}
 		return Z_Registration_Info_UPackage__Script_AGP.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_AGP(Z_Construct_UPackage__Script_AGP, TEXT("/Script/AGP"), Z_Registration_Info_UPackage__Script_AGP, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x4F101413, 0x0A2691BC));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_AGP(Z_Construct_UPackage__Script_AGP, TEXT("/Script/AGP"), Z_Registration_Info_UPackage__Script_AGP, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x12F3EC70, 0x0A2691BC));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

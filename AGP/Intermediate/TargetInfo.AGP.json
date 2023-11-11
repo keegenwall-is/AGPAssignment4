@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "AGP",
+			"Path": "D:\\GitHub\\AGPAssignment4\\AGP\\Source\\AGP.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "AGPEditor",
+			"Path": "D:\\GitHub\\AGPAssignment4\\AGP\\Source\\AGPEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

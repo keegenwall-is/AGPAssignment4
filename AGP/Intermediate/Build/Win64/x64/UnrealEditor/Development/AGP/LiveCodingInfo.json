@@ -2,7 +2,6 @@
 	"RemapUnityFiles": 
 	{
 		"Module.AGP.cpp.obj": [
-			"AGP.init.gen.cpp.obj",
 			"AGPGameModeBase.gen.cpp.obj",
 			"BaseCharacter.gen.cpp.obj",
 			"EmptyRoomClass.gen.cpp.obj",
@@ -12,7 +11,6 @@
 			"LandscapeGenerator.gen.cpp.obj",
 			"NavigationNode.gen.cpp.obj",
 			"PathfindingSubsystem.gen.cpp.obj",
-			"PCGGameInstance.gen.cpp.obj",
 			"PickupBase.gen.cpp.obj",
 			"PickupBounceComponent.gen.cpp.obj",
 			"PickupRotatorComponent.gen.cpp.obj",
@@ -33,7 +31,8 @@
 			"HealthComponent.cpp.obj",
 			"PlayerCharacter.cpp.obj",
 			"EmptyRoomClass.cpp.obj",
-			"PCGGameInstance.cpp.obj",
+			"NavigationNode.cpp.obj",
+			"PathfindingSubsystem.cpp.obj",
 			"PickupBounceComponent.cpp.obj",
 			"PickupRotatorComponent.cpp.obj",
 			"LampPickup.cpp.obj",
@@ -47,9 +46,10 @@
 			"Room5Class.cpp.obj",
 			"TableChairClass.cpp.obj",
 			"TableClass.cpp.obj",
+			"AGP.init.gen.cpp.obj",
+			"PCGGameInstance.gen.cpp.obj",
 			"LandscapeGenerator.cpp.obj",
-			"NavigationNode.cpp.obj",
-			"PathfindingSubsystem.cpp.obj"
+			"PCGGameInstance.cpp.obj"
 		]
 	}
 }

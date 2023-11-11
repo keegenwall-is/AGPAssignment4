@@ -20,6 +20,7 @@ class ARoom5Class;
 class ATableClass;
 class ATableChairClass;
 class AEmptyRoomClass;
+class ALampPickup;
 /**
  *
  */
@@ -37,6 +38,7 @@ public:
 	UClass* GetTableClass() const;
 	UClass* GetTableChairClass() const;
 	UClass* GetEmptyRoomClass() const;
+	UClass* GetLampPickupClass() const;
 
 protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Room Classes")
@@ -62,4 +64,7 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Object Classes")
 	TSubclassOf<ATableChairClass> TableChairClass;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Object Classes")
+	TSubclassOf<ALampPickup> LampPickupClass;
 };

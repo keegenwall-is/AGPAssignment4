@@ -43,14 +43,8 @@ protected:
 	void DrawGrid();
 	void DrawPath();
 	void GenerateRooms();
+	void SpawnLamps();
 	void SpawnPathRooms(FVector p);
-	void SpawnRooms();
-	void SpawnCorners();
-	void SpawnEdge1();
-	void SpawnEdge2();
-	void SpawnEdge3();
-	void SpawnEdge4();
-	void SpawnTables();
 	void GenerateNodes();
 	FRotator RandomRotation();
 	

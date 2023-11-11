@@ -25,7 +25,11 @@
             "d:\\github\\agpassignment4\\agp\\source\\agp\\tablechairclass.h",
             "d:\\github\\agpassignment4\\agp\\intermediate\\build\\win64\\unrealeditor\\inc\\agp\\uht\\tablechairclass.generated.h",
             "d:\\github\\agpassignment4\\agp\\source\\agp\\tableclass.h",
-            "d:\\github\\agpassignment4\\agp\\intermediate\\build\\win64\\unrealeditor\\inc\\agp\\uht\\tableclass.generated.h"
+            "d:\\github\\agpassignment4\\agp\\intermediate\\build\\win64\\unrealeditor\\inc\\agp\\uht\\tableclass.generated.h",
+            "d:\\github\\agpassignment4\\agp\\source\\agp\\pickups\\lamppickup.h",
+            "d:\\github\\agpassignment4\\agp\\source\\agp\\pickups\\pickupbase.h",
+            "d:\\github\\agpassignment4\\agp\\intermediate\\build\\win64\\unrealeditor\\inc\\agp\\uht\\pickupbase.generated.h",
+            "d:\\github\\agpassignment4\\agp\\intermediate\\build\\win64\\unrealeditor\\inc\\agp\\uht\\lamppickup.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

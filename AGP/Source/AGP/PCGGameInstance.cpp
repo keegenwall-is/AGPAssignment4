@@ -12,6 +12,7 @@
 #include "EmptyRoomClass.h"
 #include "TableChairClass.h"
 #include "TableClass.h"
+#include "Pickups/LampPickup.h"
 
 class ARoom1Class;
 class ARoom2Class;
@@ -59,5 +60,10 @@ UClass* UPCGGameInstance::GetTableChairClass() const
 UClass* UPCGGameInstance::GetEmptyRoomClass() const
 {
 	return EmptyRoomClass.Get();
+}
+
+UClass* UPCGGameInstance::GetLampPickupClass() const
+{
+	return LampPickupClass.Get();
 }
 
