@@ -57,6 +57,7 @@
     <ClInclude Include="..\..\Source\AGP\AGPGameModeBase.h">
       <Filter>Source\AGP</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClCompile Include="..\..\Source\AGP\LandscapeGenerator.cpp">
       <Filter>Source\AGP</Filter>
     </ClCompile>
@@ -67,6 +68,12 @@
       <Filter>Source\AGP</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\AGP\PCGGameInstance.h">
+=======
+    <ClCompile Include="..\..\Source\AGP\MultiplayerGameMode.cpp">
+      <Filter>Source\AGP</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\AGP\MultiplayerGameMode.h">
+>>>>>>> Multiplayer
       <Filter>Source\AGP</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\AGP\PickupBounceComponent.cpp">
@@ -87,6 +94,7 @@
     <ClInclude Include="..\..\Source\AGP\RingListener.h">
       <Filter>Source\AGP</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClCompile Include="..\..\Source\AGP\Room1Class.cpp">
       <Filter>Source\AGP</Filter>
     </ClCompile>
@@ -129,6 +137,8 @@
     <ClInclude Include="..\..\Source\AGP\TableClass.h">
       <Filter>Source\AGP</Filter>
     </ClInclude>
+=======
+>>>>>>> Multiplayer
     <Filter Include="Source\AGP\Characters">
       <UniqueIdentifier>{5BEAA416-0654-34C0-8C6E-3ACFF7EB99BB}</UniqueIdentifier>
     </Filter>

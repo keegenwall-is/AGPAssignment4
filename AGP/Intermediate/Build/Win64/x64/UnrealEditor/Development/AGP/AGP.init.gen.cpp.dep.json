@@ -1,11 +1,19 @@
 {
     "Version": "1.2",
     "Data": {
+<<<<<<< HEAD
         "Source": "d:\\github\\agpassignment4\\agp\\intermediate\\build\\win64\\unrealeditor\\inc\\agp\\uht\\agp.init.gen.cpp",
         "ProvidedModule": "",
         "PCH": "d:\\github\\agpassignment4\\agp\\intermediate\\build\\win64\\x64\\agpeditor\\development\\engine\\sharedpch.engine.shadowerrors.inclorderunreal5_1.h.pch",
         "Includes": [
             "d:\\github\\agpassignment4\\agp\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\agp\\definitions.agp.h"
+=======
+        "Source": "c:\\users\\keege\\onedrive\\documents\\agpassignment4\\agpassignment4\\agp\\intermediate\\build\\win64\\unrealeditor\\inc\\agp\\uht\\agp.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\keege\\onedrive\\documents\\agpassignment4\\agpassignment4\\agp\\intermediate\\build\\win64\\x64\\agpeditor\\development\\engine\\sharedpch.engine.shadowerrors.inclorderunreal5_1.h.pch",
+        "Includes": [
+            "c:\\users\\keege\\onedrive\\documents\\agpassignment4\\agpassignment4\\agp\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\agp\\definitions.agp.h"
+>>>>>>> Multiplayer
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []

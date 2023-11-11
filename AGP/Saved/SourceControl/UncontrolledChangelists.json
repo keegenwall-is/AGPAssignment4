@@ -5,6 +5,7 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
+<<<<<<< HEAD
 				"D:/GitHub/AGPAssignment4/AGP/Content/Levels/ProceduralLevelMap.umap",
 				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/Wall_Blueprint.uasset",
 				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/Cube_Blueprint.uasset",
@@ -27,6 +28,20 @@
 				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/TableChairBlueprint1.uasset",
 				"D:/GitHub/AGPAssignment4/AGP/Content/Levels/ShooterMap_BuiltData.uasset",
 				"D:/GitHub/AGPAssignment4/AGP/Content/Levels/ShooterMap.umap"
+=======
+>>>>>>> Multiplayer
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/Blueprints/AnimBP_FPArms.uasset",
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/VFX/LaserParticles.uasset",
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/Blueprints/BP_WeaponPickup.uasset",
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/Blueprints/BP_PlayerCharacter.uasset",
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/Levels/ShooterMap.umap",
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/Blueprints/BP_Laser.uasset",
+<<<<<<< HEAD
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/VFX/TwirlingLaserSystem.uasset"
+=======
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/VFX/TwirlingLaserSystem.uasset",
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/Blueprints/BP_Multiplayer.uasset"
+>>>>>>> Multiplayer
 			]
 		}
 	]

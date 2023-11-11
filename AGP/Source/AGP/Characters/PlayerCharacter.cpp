@@ -72,9 +72,11 @@ void APlayerCharacter::FireWeapon(const FInputActionValue& Value)
 	FRotator CameraRotation;
 	GetWorld()->GetFirstPlayerController()->GetPlayerViewPoint(CameraPosition, CameraRotation);
 	const FVector CameraForward = UKismetMathLibrary::GetForwardVector(CameraRotation);
-	if (BulletStartPosition)
+	Fire();
+	
+	/*if (BulletStartPosition)
 	{
 		Fire(BulletStartPosition->GetComponentLocation() + 10000.0f * CameraForward);
-	}
+	}*/
 }
 
