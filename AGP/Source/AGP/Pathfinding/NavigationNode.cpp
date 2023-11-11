@@ -15,6 +15,19 @@ ANavigationNode::ANavigationNode()
 
 }
 
+void ANavigationNode::DeleteAllConnections()
+{
+	ConnectedNodes.Empty();
+}
+
+void ANavigationNode::DeleteConnection(ANavigationNode* node)
+{
+	if (ConnectedNodes.Contains(node))
+	{
+		ConnectedNodes.Remove(node);
+	}
+}
+
 // Called when the game starts or when spawned
 void ANavigationNode::BeginPlay()
 {

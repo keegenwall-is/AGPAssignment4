@@ -73,17 +73,30 @@ void UPathfindingSubsystem::DeleteOtherNodes(TArray<FVector> Path1, TArray<FVect
 			}
 		}
 	}
-
+	
 	for (ANavigationNode* node : Nodes)
 	{
 		if (!NodesToKeep.Contains(node))
 		{
-			UE_LOG(LogTemp, Warning, TEXT("yes"));
-			//Nodes.Remove(node);
-			node->Destroy();
+			NodesToRemove.Add(node);
 		}
 	}
 
+	for (ANavigationNode* node : NodesToKeep)
+	{
+		for (ANavigationNode* n : NodesToRemove)
+		{
+			node->DeleteConnection(n);
+		}
+	}
+
+	for (ANavigationNode* node : NodesToRemove)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("yes"));
+		//Nodes.Remove(node);
+		node->DeleteAllConnections();
+		node->Destroy();
+	}
 }
 
 ANavigationNode* UPathfindingSubsystem::GetRandomNode()

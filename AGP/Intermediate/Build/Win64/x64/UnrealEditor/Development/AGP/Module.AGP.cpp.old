@@ -32,6 +32,7 @@
 #include "D:/GitHub/AGPAssignment4/AGP/Source/AGP/EmptyRoomClass.cpp"
 #include "D:/GitHub/AGPAssignment4/AGP/Source/AGP/Pathfinding/NavigationNode.cpp"
 #include "D:/GitHub/AGPAssignment4/AGP/Source/AGP/Pathfinding/PathfindingSubsystem.cpp"
+#include "D:/GitHub/AGPAssignment4/AGP/Source/AGP/PCGGameInstance.cpp"
 #include "D:/GitHub/AGPAssignment4/AGP/Source/AGP/PickupBounceComponent.cpp"
 #include "D:/GitHub/AGPAssignment4/AGP/Source/AGP/PickupRotatorComponent.cpp"
 #include "D:/GitHub/AGPAssignment4/AGP/Source/AGP/Pickups/LampPickup.cpp"

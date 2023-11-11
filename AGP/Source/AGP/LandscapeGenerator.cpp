@@ -13,6 +13,7 @@
 #include "Room5Class.h"
 #include "TableChairClass.h"
 #include "TableClass.h"
+#include "Characters/EnemyCharacter.h"
 #include "Kismet/KismetMathLibrary.h"
 
 class UPathfindingSubsystem;
@@ -41,7 +42,7 @@ void ALandscapeGenerator::BeginPlay()
 	GenerateRooms();
 
 
-	for (TActorIterator<APlayerCharacter> It(GetWorld()); It; ++It)
+	/*for (TActorIterator<APlayerCharacter> It(GetWorld()); It; ++It)
 	{
 		players.Add(*It);
 	}
@@ -49,6 +50,16 @@ void ALandscapeGenerator::BeginPlay()
 	for (APlayerCharacter* player : players)
 	{
 		player->SetActorLocation(StartPoint);
+	}*/
+
+	for (TActorIterator<AEnemyCharacter> It(GetWorld()); It; ++It)
+	{
+		enemies.Add(*It);
+	}
+	
+	for (AEnemyCharacter* enemy : enemies)
+	{
+		enemy->SetActorLocation(EndPoint);
 	}
 
 	

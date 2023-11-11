@@ -25,6 +25,8 @@ public:
 	{
 		return GScore + HScore;
 	}
+	void DeleteAllConnections();
+	void DeleteConnection(ANavigationNode* node);
 
 protected:
 	// Called when the game starts or when spawned

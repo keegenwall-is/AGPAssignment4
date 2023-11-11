@@ -9,7 +9,9 @@
 #include "Room4Class.h"
 #include "GameFramework/Actor.h"
 #include "Characters/PlayerCharacter.h"
+#include "Characters/EnemyCharacter.h"
 #include "LandscapeGenerator.generated.h"
+
 
 class UPathfindingSubsystem;
 class UPCGGameInstance;
@@ -87,6 +89,7 @@ protected:
 
 	UPROPERTY(EditAnywhere)
 	TArray<APlayerCharacter*> players;
+	TArray<AEnemyCharacter*> enemies;
 
 
 public:
