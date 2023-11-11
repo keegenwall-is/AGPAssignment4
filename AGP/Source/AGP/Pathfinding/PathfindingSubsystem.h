@@ -46,7 +46,7 @@ public:
 	ANavigationNode* FindThirdNearestNode(const FVector& TargetLocation);
 
 	//void PlaceProceduralNodes(const TArray<FVector>& LandscapeVertexData, int32 MapWidth, int32 MapHeight);
-	void DeleteOtherNodes(TArray<FVector> Path1);
+	void DeleteOtherNodes(TArray<FVector> Path1, TArray<FVector> Path2);
 
 protected:
 

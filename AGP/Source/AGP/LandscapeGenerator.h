@@ -37,7 +37,8 @@ protected:
 
 	void PopulateArray();
 	void DrawGrid();
-	FRotator RandomRotation();
+	void DrawPath();
+	void GenerateRooms();
 	void SpawnRooms();
 	void SpawnCorners();
 	void SpawnEdge1();
@@ -46,7 +47,8 @@ protected:
 	void SpawnEdge4();
 	void SpawnTables();
 	void GenerateNodes();
-	void DrawPath();
+	FRotator RandomRotation();
+	
 
 	TArray<FVector> SpawnLocations;
 	TArray<FVector> Edges1;
@@ -68,8 +70,12 @@ protected:
 	TArray<FVector> Path1;
 	UPROPERTY(VisibleAnywhere)
 	TArray<FVector> Path2;
+	TArray<FVector> TempPath1;
+	TArray<FVector> TempPath2;
 	UPROPERTY(VisibleAnywhere)
 	TArray<FVector> TotalPath;
+	FVector StartPoint;
+	FVector EndPoint;
 
 	UPROPERTY()
 	UPathfindingSubsystem* pathfindingSubsystem;

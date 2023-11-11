@@ -35,10 +35,8 @@ void ALandscapeGenerator::BeginPlay()
 	Super::BeginPlay();
 	PopulateArray();
 	DrawGrid();
-	//GenerateNodes();
-
 	DrawPath();
-
+	//GenerateRooms();
 
 	//SpawnRooms();
 	//SpawnCorners();
@@ -59,56 +57,6 @@ void ALandscapeGenerator::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-}
-
-void ALandscapeGenerator::GenerateNodes()
-{
-	if (UPathfindingSubsystem* PathfindingSubsystem = GetWorld()->GetSubsystem<UPathfindingSubsystem>())
-	{
-
-		//PathfindingSubsystem->PlaceProceduralNodes(AllOptions, width, height);
-	}
-	else
-	{
-		UE_LOG(LogTemp, Error, TEXT("Can't find the pathfinding subsystem"))
-	}
-}
-
-void ALandscapeGenerator::DrawPath()
-{
-	if (pathfindingSubsystem)
-	{
-		// first path: goal
-		int i = UKismetMathLibrary::RandomInteger(6);
-		int j = UKismetMathLibrary::RandomInteger(2);
-		int k = UKismetMathLibrary::RandomInteger(6);
-		if (j == 0)
-		{
-			Path1 = pathfindingSubsystem->GetPath(AllOptions[i], Edges2[k]);
-		}
-		else if (j == 1)
-		{
-			Path1 = pathfindingSubsystem->GetPath(AllOptions[i], Edges3[k]);
-		}
-
-		//second path
-		int m = UKismetMathLibrary::RandomInteger(4);
-		Path2 = pathfindingSubsystem->GetPath(Path1[0], Edges4[m]);
-
-		for (FVector p : Path2)
-		{
-			if (!Path1.Contains(p))
-				Path1.Add(p);
-		}
-
-		const UPCGGameInstance* GameInstance = GetWorld()->GetGameInstance<UPCGGameInstance>();
-		for (FVector p : Path1)
-		{
-			GetWorld()->SpawnActor<ARoom4Class>(GameInstance->GetRoom4Class(), p, RandomRotation());
-		}
-	}
-
-	pathfindingSubsystem->DeleteOtherNodes(Path1);
 }
 
 void ALandscapeGenerator::PopulateArray()
@@ -189,30 +137,96 @@ void ALandscapeGenerator::DrawGrid()
 	}
 }
 
-FRotator ALandscapeGenerator::RandomRotation()
+void ALandscapeGenerator::DrawPath()
 {
-	FRotator Rotation;
+	if (pathfindingSubsystem)
+	{
+		// first sections of the two goal paths
+		StartPoint = AllOptions[UKismetMathLibrary::RandomInteger(6)];
+		int k = UKismetMathLibrary::RandomInteger(6);
+		Path1 = pathfindingSubsystem->GetPath(StartPoint, Edges2[k]);
+		
+		k = UKismetMathLibrary::RandomInteger(6);
+		Path2 = pathfindingSubsystem->GetPath(StartPoint, Edges3[k]);
+		
 
-	int r = UKismetMathLibrary::RandomInteger(4);
-	if (r == 0)
-	{
-		Rotation = FRotator(0, 0, 0);
-	}
-	else if (r == 1)
-	{
-		Rotation = FRotator(0, 90, 0);
-	}
-	else if (r == 2)
-	{
-		Rotation = FRotator(0, 180, 0);
-	}
-	else if (r == 3)
-	{
-		Rotation = FRotator(0, 270, 0);
+		//second sections of the paths
+		EndPoint = Edges4[UKismetMathLibrary::RandomInteger(4)];
+		TempPath1 = pathfindingSubsystem->GetPath(Path1[0], EndPoint);
+		TempPath2 = pathfindingSubsystem->GetPath(Path2[0], EndPoint);
+
+		//adding the first section to the second section to create two paths to the goal
+		for (FVector p : TempPath1)
+		{
+			if (!Path1.Contains(p))
+				Path1.Add(p);
+		}
+
+		for (FVector p : TempPath2)
+		{
+			if (!Path2.Contains(p))
+				Path2.Add(p);
+		}
+
+		//adding the right rooms along the paths
+		const UPCGGameInstance* GameInstance = GetWorld()->GetGameInstance<UPCGGameInstance>();
+		for (FVector p : Path1)
+		{
+			GetWorld()->SpawnActor<ARoom4Class>(GameInstance->GetRoom4Class(), p, RandomRotation());
+		}
+
+		for (FVector p : Path2)
+		{
+			if (!Path1.Contains(p))
+			{
+				GetWorld()->SpawnActor<ARoom4Class>(GameInstance->GetRoom4Class(), p, RandomRotation());
+			}
+		}
 	}
 
-	return Rotation;
+	DrawDebugSphere(GetWorld(), StartPoint, 300, 8, FColor::Cyan, true);
+	DrawDebugSphere(GetWorld(), EndPoint, 300, 8, FColor::Cyan, true);
+	pathfindingSubsystem->DeleteOtherNodes(Path1, Path2);
+	
 }
+
+void ALandscapeGenerator::GenerateRooms()
+{
+	const UPCGGameInstance* GameInstance = GetWorld()->GetGameInstance<UPCGGameInstance>();
+
+	//this section spawns in the rooms for the middle section of the grid
+	//not including the edges and corners
+	//this also excludes the path of rooms so it doesn't override them
+	int t;
+	for (FVector location : SpawnLocations)
+	{
+		if (!Path1.Contains(location))
+		{
+			t = FMath::RandRange(0, 100);
+			if (t >= 0 && t <= 5)
+			{
+				GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, RandomRotation());
+			}
+			else if (t > 5 && t <= 15)
+			{
+				GetWorld()->SpawnActor<ARoom2Class>(GameInstance->GetRoom2Class(), location, RandomRotation());
+			}
+			else if (t > 15 && t <= 25)
+			{
+				GetWorld()->SpawnActor<ARoom3Class>(GameInstance->GetRoom3Class(), location, RandomRotation());
+			}
+			else if (t > 25 && t <= 90)
+			{
+				GetWorld()->SpawnActor<ARoom4Class>(GameInstance->GetRoom4Class(), location, RandomRotation());
+			}
+			else
+			{
+				GetWorld()->SpawnActor<ARoom5Class>(GameInstance->GetRoom5Class(), location, RandomRotation());
+			}
+		}
+	}
+}
+
 
 void ALandscapeGenerator::SpawnRooms()
 {
@@ -518,6 +532,44 @@ void ALandscapeGenerator::SpawnTables()
 				GetWorld()->SpawnActor<ATableClass>(GameInstance->GetTableClass(), location, RandomRotation());
 			}
 		}
+	}
+}
+
+FRotator ALandscapeGenerator::RandomRotation()
+{
+	FRotator Rotation;
+
+	int r = UKismetMathLibrary::RandomInteger(4);
+	if (r == 0)
+	{
+		Rotation = FRotator(0, 0, 0);
+	}
+	else if (r == 1)
+	{
+		Rotation = FRotator(0, 90, 0);
+	}
+	else if (r == 2)
+	{
+		Rotation = FRotator(0, 180, 0);
+	}
+	else if (r == 3)
+	{
+		Rotation = FRotator(0, 270, 0);
+	}
+
+	return Rotation;
+}
+
+void ALandscapeGenerator::GenerateNodes()
+{
+	if (UPathfindingSubsystem* PathfindingSubsystem = GetWorld()->GetSubsystem<UPathfindingSubsystem>())
+	{
+
+		//PathfindingSubsystem->PlaceProceduralNodes(AllOptions, width, height);
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("Can't find the pathfinding subsystem"))
 	}
 }
 

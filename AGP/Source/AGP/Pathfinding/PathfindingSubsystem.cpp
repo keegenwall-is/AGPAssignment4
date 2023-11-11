@@ -54,11 +54,18 @@ void UPathfindingSubsystem::PopulateNodes()
 	}
 }
 
-void UPathfindingSubsystem::DeleteOtherNodes(TArray<FVector> Path1)
+void UPathfindingSubsystem::DeleteOtherNodes(TArray<FVector> Path1, TArray<FVector> Path2)
 {
 	for (ANavigationNode* node : Nodes)
 	{
 		for (FVector place : Path1)
+		{
+			if (node->GetActorLocation() == place)
+			{
+				NodesToKeep.Add(node);
+			}
+		}
+		for (FVector place : Path2)
 		{
 			if (node->GetActorLocation() == place)
 			{
