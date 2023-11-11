@@ -4,12 +4,13 @@
 		"Module.AGP.cpp.obj": [
 			"AGPGameModeBase.gen.cpp.obj",
 			"BaseCharacter.gen.cpp.obj",
+			"EmptyRoomClass.gen.cpp.obj",
 			"EnemyCharacter.gen.cpp.obj",
 			"HealthComponent.gen.cpp.obj",
 			"LampPickup.gen.cpp.obj",
-			"LandscapeGenerator.gen.cpp.obj",
 			"NavigationNode.gen.cpp.obj",
 			"PathfindingSubsystem.gen.cpp.obj",
+			"PCGGameInstance.gen.cpp.obj",
 			"PickupBase.gen.cpp.obj",
 			"PickupBounceComponent.gen.cpp.obj",
 			"PickupRotatorComponent.gen.cpp.obj",
@@ -29,6 +30,7 @@
 			"EnemyCharacter.cpp.obj",
 			"HealthComponent.cpp.obj",
 			"PlayerCharacter.cpp.obj",
+			"EmptyRoomClass.cpp.obj",
 			"NavigationNode.cpp.obj",
 			"PathfindingSubsystem.cpp.obj",
 			"PickupBounceComponent.cpp.obj",
@@ -45,9 +47,7 @@
 			"TableChairClass.cpp.obj",
 			"TableClass.cpp.obj",
 			"AGP.init.gen.cpp.obj",
-			"EmptyRoomClass.gen.cpp.obj",
-			"PCGGameInstance.gen.cpp.obj",
-			"EmptyRoomClass.cpp.obj",
+			"LandscapeGenerator.gen.cpp.obj",
 			"LandscapeGenerator.cpp.obj",
 			"PCGGameInstance.cpp.obj"
 		]

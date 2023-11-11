@@ -3,6 +3,7 @@
 
 #include "LandscapeGenerator.h"
 
+#include "EngineUtils.h"
 #include "Pathfinding/PathfindingSubsystem.h"
 #include "PCGGameInstance.h"
 #include "Room1Class.h"
@@ -38,6 +39,19 @@ void ALandscapeGenerator::BeginPlay()
 	if (DoDebug) { DrawGrid(); }
 	DrawPath();
 	GenerateRooms();
+
+
+	for (TActorIterator<APlayerCharacter> It(GetWorld()); It; ++It)
+	{
+		players.Add(*It);
+	}
+	
+	for (APlayerCharacter* player : players)
+	{
+		player->SetActorLocation(StartPoint);
+	}
+
+	
 	//SpawnCorners();
 	//SpawnEdge1();
 	//SpawnEdge2();
@@ -265,6 +279,19 @@ void ALandscapeGenerator::SpawnPathRooms(FVector p)
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -639,10 +666,9 @@ FRotator ALandscapeGenerator::RandomRotation()
 
 void ALandscapeGenerator::GenerateNodes()
 {
-	if (UPathfindingSubsystem* PathfindingSubsystem = GetWorld()->GetSubsystem<UPathfindingSubsystem>())
+	if (pathfindingSubsystem)
 	{
-
-		//PathfindingSubsystem->PlaceProceduralNodes(AllOptions, width, height);
+		//pathfindingSubsystem->PlaceProceduralNodes(AllOptions, width, height);
 	}
 	else
 	{

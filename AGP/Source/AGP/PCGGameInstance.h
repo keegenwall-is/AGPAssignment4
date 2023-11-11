@@ -62,5 +62,4 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Object Classes")
 	TSubclassOf<ATableChairClass> TableChairClass;
-
 };

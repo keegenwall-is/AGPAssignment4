@@ -8,6 +8,7 @@
 #include "Room3Class.h"
 #include "Room4Class.h"
 #include "GameFramework/Actor.h"
+#include "Characters/PlayerCharacter.h"
 #include "LandscapeGenerator.generated.h"
 
 class UPathfindingSubsystem;
@@ -84,6 +85,8 @@ protected:
 	UPROPERTY()
 	UPathfindingSubsystem* pathfindingSubsystem;
 
+	UPROPERTY(EditAnywhere)
+	TArray<APlayerCharacter*> players;
 
 
 public:

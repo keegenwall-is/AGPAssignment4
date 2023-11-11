@@ -11,6 +11,7 @@ void EmptyLinkFunctionForGeneratedCodeLandscapeGenerator() {}
 // Cross Module References
 	AGP_API UClass* Z_Construct_UClass_ALandscapeGenerator();
 	AGP_API UClass* Z_Construct_UClass_ALandscapeGenerator_NoRegister();
+	AGP_API UClass* Z_Construct_UClass_APlayerCharacter_NoRegister();
 	AGP_API UClass* Z_Construct_UClass_UPathfindingSubsystem_NoRegister();
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
@@ -54,6 +55,11 @@ void EmptyLinkFunctionForGeneratedCodeLandscapeGenerator() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_pathfindingSubsystem_MetaData[];
 #endif
 		static const UECodeGen_Private::FObjectPropertyParams NewProp_pathfindingSubsystem;
+		static const UECodeGen_Private::FObjectPropertyParams NewProp_players_Inner;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_players_MetaData[];
+#endif
+		static const UECodeGen_Private::FArrayPropertyParams NewProp_players;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UECodeGen_Private::FClassParams ClassParams;
@@ -109,6 +115,14 @@ void EmptyLinkFunctionForGeneratedCodeLandscapeGenerator() {}
 	};
 #endif
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_pathfindingSubsystem = { "pathfindingSubsystem", nullptr, (EPropertyFlags)0x0020080000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ALandscapeGenerator, pathfindingSubsystem), Z_Construct_UClass_UPathfindingSubsystem_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_pathfindingSubsystem_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_pathfindingSubsystem_MetaData)) };
+	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_players_Inner = { "players", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, Z_Construct_UClass_APlayerCharacter_NoRegister, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_players_MetaData[] = {
+		{ "Category", "LandscapeGenerator" },
+		{ "ModuleRelativePath", "LandscapeGenerator.h" },
+	};
+#endif
+	const UECodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_players = { "players", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ALandscapeGenerator, players), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_players_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_players_MetaData)) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ALandscapeGenerator_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_DoDebug,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_Path1_Inner,
@@ -118,6 +132,8 @@ void EmptyLinkFunctionForGeneratedCodeLandscapeGenerator() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_TotalPath_Inner,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_TotalPath,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_pathfindingSubsystem,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_players_Inner,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ALandscapeGenerator_Statics::NewProp_players,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ALandscapeGenerator_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ALandscapeGenerator>::IsAbstract,
@@ -156,9 +172,9 @@ void EmptyLinkFunctionForGeneratedCodeLandscapeGenerator() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ALandscapeGenerator, ALandscapeGenerator::StaticClass, TEXT("ALandscapeGenerator"), &Z_Registration_Info_UClass_ALandscapeGenerator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ALandscapeGenerator), 492054814U) },
+		{ Z_Construct_UClass_ALandscapeGenerator, ALandscapeGenerator::StaticClass, TEXT("ALandscapeGenerator"), &Z_Registration_Info_UClass_ALandscapeGenerator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ALandscapeGenerator), 488647631U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_168001718(TEXT("/Script/AGP"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_583428034(TEXT("/Script/AGP"),
 		Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
