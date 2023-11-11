@@ -6,6 +6,18 @@
 			"description": "Default Uncontrolled Changelist",
 			"files": [
 				"D:/GitHub/AGPAssignment4/AGP/Content/Levels/ProceduralLevelMap.umap",
+				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/BP_PCGGameInstance.uasset",
+				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/Room1_Blueprint1.uasset",
+				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/Room2_Blueprint1.uasset",
+				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/Room3_Blueprint1.uasset",
+				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/Room4_Blueprint1.uasset",
+				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/Room5_Blueprint1.uasset",
+				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/TableBlueprint1.uasset",
+				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/TableChairBlueprint1.uasset",
+				"D:/GitHub/AGPAssignment4/AGP/Content/Levels/ShooterMap_BuiltData.uasset",
+				"D:/GitHub/AGPAssignment4/AGP/Content/Levels/ShooterMap.umap",
+				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/EmptyRoom_Blueprint.uasset",
+				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/BP_Lamp_Pickup.uasset",
 				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/Wall_Blueprint.uasset",
 				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/Cube_Blueprint.uasset",
 				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/MyRoom1Class.uasset",
@@ -16,17 +28,7 @@
 				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/Room5_Blueprint.uasset",
 				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/TableBlueprint.uasset",
 				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/TableChairBlueprint.uasset",
-				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/BP_PCGGameInstance.uasset",
-				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/Room1_BP.uasset",
-				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/Room1_Blueprint1.uasset",
-				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/Room2_Blueprint1.uasset",
-				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/Room3_Blueprint1.uasset",
-				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/Room4_Blueprint1.uasset",
-				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/Room5_Blueprint1.uasset",
-				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/TableBlueprint1.uasset",
-				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/TableChairBlueprint1.uasset",
-				"D:/GitHub/AGPAssignment4/AGP/Content/Levels/ShooterMap_BuiltData.uasset",
-				"D:/GitHub/AGPAssignment4/AGP/Content/Levels/ShooterMap.umap"
+				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/Room1_BP.uasset"
 			]
 		}
 	]

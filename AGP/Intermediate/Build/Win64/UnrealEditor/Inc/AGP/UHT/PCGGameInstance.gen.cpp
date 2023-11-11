@@ -9,6 +9,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodePCGGameInstance() {}
 // Cross Module References
+	AGP_API UClass* Z_Construct_UClass_AEmptyRoomClass_NoRegister();
 	AGP_API UClass* Z_Construct_UClass_ARoom1Class_NoRegister();
 	AGP_API UClass* Z_Construct_UClass_ARoom2Class_NoRegister();
 	AGP_API UClass* Z_Construct_UClass_ARoom3Class_NoRegister();
@@ -56,6 +57,10 @@ void EmptyLinkFunctionForGeneratedCodePCGGameInstance() {}
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Room5Class_MetaData[];
 #endif
 		static const UECodeGen_Private::FClassPropertyParams NewProp_Room5Class;
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_EmptyRoomClass_MetaData[];
+#endif
+		static const UECodeGen_Private::FClassPropertyParams NewProp_EmptyRoomClass;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_TableClass_MetaData[];
 #endif
@@ -115,6 +120,13 @@ void EmptyLinkFunctionForGeneratedCodePCGGameInstance() {}
 #endif
 	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_UPCGGameInstance_Statics::NewProp_Room5Class = { "Room5Class", nullptr, (EPropertyFlags)0x0024080000010001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UPCGGameInstance, Room5Class), Z_Construct_UClass_UClass, Z_Construct_UClass_ARoom5Class_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UPCGGameInstance_Statics::NewProp_Room5Class_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UPCGGameInstance_Statics::NewProp_Room5Class_MetaData)) };
 #if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UPCGGameInstance_Statics::NewProp_EmptyRoomClass_MetaData[] = {
+		{ "Category", "Room Classes" },
+		{ "ModuleRelativePath", "PCGGameInstance.h" },
+	};
+#endif
+	const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_UPCGGameInstance_Statics::NewProp_EmptyRoomClass = { "EmptyRoomClass", nullptr, (EPropertyFlags)0x0024080000010001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(UPCGGameInstance, EmptyRoomClass), Z_Construct_UClass_UClass, Z_Construct_UClass_AEmptyRoomClass_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UPCGGameInstance_Statics::NewProp_EmptyRoomClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UPCGGameInstance_Statics::NewProp_EmptyRoomClass_MetaData)) };
+#if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UPCGGameInstance_Statics::NewProp_TableClass_MetaData[] = {
 		{ "Category", "Object Classes" },
 		{ "ModuleRelativePath", "PCGGameInstance.h" },
@@ -134,6 +146,7 @@ void EmptyLinkFunctionForGeneratedCodePCGGameInstance() {}
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPCGGameInstance_Statics::NewProp_Room3Class,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPCGGameInstance_Statics::NewProp_Room4Class,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPCGGameInstance_Statics::NewProp_Room5Class,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPCGGameInstance_Statics::NewProp_EmptyRoomClass,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPCGGameInstance_Statics::NewProp_TableClass,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UPCGGameInstance_Statics::NewProp_TableChairClass,
 	};
@@ -175,9 +188,9 @@ void EmptyLinkFunctionForGeneratedCodePCGGameInstance() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_PCGGameInstance_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UPCGGameInstance, UPCGGameInstance::StaticClass, TEXT("UPCGGameInstance"), &Z_Registration_Info_UClass_UPCGGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPCGGameInstance), 2780448370U) },
+		{ Z_Construct_UClass_UPCGGameInstance, UPCGGameInstance::StaticClass, TEXT("UPCGGameInstance"), &Z_Registration_Info_UClass_UPCGGameInstance, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPCGGameInstance), 1506304038U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_PCGGameInstance_h_1867568522(TEXT("/Script/AGP"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_PCGGameInstance_h_2713078435(TEXT("/Script/AGP"),
 		Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_PCGGameInstance_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_PCGGameInstance_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

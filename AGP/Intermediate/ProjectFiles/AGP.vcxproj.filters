@@ -18,6 +18,9 @@
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
     </None>
+    <None Include="..\..\Config\DefaultEditorSettings.ini">
+      <Filter>Config</Filter>
+    </None>
     <None Include="..\..\Config\DefaultEngine.ini">
       <Filter>Config</Filter>
     </None>
@@ -55,6 +58,12 @@
       <Filter>Source\AGP</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\AGP\AGPGameModeBase.h">
+      <Filter>Source\AGP</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\AGP\EmptyRoomClass.cpp">
+      <Filter>Source\AGP</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\AGP\EmptyRoomClass.h">
       <Filter>Source\AGP</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\AGP\LandscapeGenerator.cpp">

@@ -33,15 +33,16 @@ void ALandscapeGenerator::BeginPlay()
 {
 	pathfindingSubsystem = GetWorld()->GetSubsystem<UPathfindingSubsystem>();
 	Super::BeginPlay();
+	SpawnOutside();
 	PopulateArray();
 	if (DoDebug) { DrawGrid(); }
 	DrawPath();
 	GenerateRooms();
-	SpawnCorners();
-	SpawnEdge1();
-	SpawnEdge2();
-	SpawnEdge3();
-	SpawnEdge4();
+	//SpawnCorners();
+	//SpawnEdge1();
+	//SpawnEdge2();
+	//SpawnEdge3();
+	//SpawnEdge4();
 	
 	//SpawnRooms();
 	
@@ -59,6 +60,27 @@ void ALandscapeGenerator::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
+
+void ALandscapeGenerator::SpawnOutside()
+{
+	const UPCGGameInstance* GameInstance = GetWorld()->GetGameInstance<UPCGGameInstance>();
+	for (int i =-1; i < height+1; i++)
+	{
+		for (int j = -1; j < width+1; j++)
+		{
+			if (i == -1 || j == -1 || i == height || j == width)
+			{
+				Outsides.Add(FVector(i * 950, j * 950, 0));
+			}
+		}
+	}
+
+	for (FVector location : Outsides)
+	{
+		GetWorld()->SpawnActor<AEmptyRoomClass>(GameInstance->GetEmptyRoomClass(), location, RandomRotation());
+	}
+}
+
 
 void ALandscapeGenerator::PopulateArray()
 {
@@ -152,9 +174,14 @@ void ALandscapeGenerator::DrawPath()
 		
 
 		//second sections of the paths
-		EndPoint = Edges4[UKismetMathLibrary::RandomInteger(4)];
+		EndPoint = AllOptions[AllOptions.Num()-1-(UKismetMathLibrary::RandomInteger(6))];
 		TempPath1 = pathfindingSubsystem->GetPath(Path1[0], EndPoint);
-		TempPath2 = pathfindingSubsystem->GetPath(Path2[0], EndPoint);
+		FVector MidPoint = Edges4[UKismetMathLibrary::RandomInteger(4)];
+		while (MidPoint == EndPoint)
+		{
+			MidPoint = Edges4[UKismetMathLibrary::RandomInteger(4)];
+		}
+		TempPath2 = pathfindingSubsystem->GetPath(Path2[0], MidPoint);
 
 		//adding the first section to the second section to create two paths to the goal
 		for (FVector p : TempPath1)
@@ -163,7 +190,15 @@ void ALandscapeGenerator::DrawPath()
 				Path1.Add(p);
 		}
 
+		TempPath1.Empty();
+		TempPath1 = pathfindingSubsystem->GetPath(TempPath2[0], EndPoint);
+
 		for (FVector p : TempPath2)
+		{
+			if (!Path2.Contains(p))
+				Path2.Add(p);
+		}
+		for (FVector p : TempPath1)
 		{
 			if (!Path2.Contains(p))
 				Path2.Add(p);
@@ -178,22 +213,6 @@ void ALandscapeGenerator::GenerateRooms()
 
 	if (pathfindingSubsystem)
 	{
-		//adding the right rooms along the paths
-		//making sure that the edges have rooms with walls so the doors dont lead to the void
-		for (FVector p : Path1)
-		{
-			SpawnPathRooms(p);
-		}
-
-		//making sure that the edges have rooms with walls so the doors dont lead to the void
-		for (FVector p : Path2)
-		{
-			if (!Path1.Contains(p))
-			{
-				SpawnPathRooms(p);
-			}
-		}
-
 		if (DoDebug)
 		{
 			DrawDebugSphere(GetWorld(), StartPoint, 300, 8, FColor::Cyan, true);
@@ -205,37 +224,17 @@ void ALandscapeGenerator::GenerateRooms()
 	//this section spawns in the rooms for the middle section of the grid
 	//not including the edges and corners
 	//this also excludes the path of rooms so it doesn't override them
-	int t;
-	for (FVector location : SpawnLocations)
+	for (FVector location : AllOptions)
 	{
 		if (!Path1.Contains(location) && !Path2.Contains(location))
 		{
-			t = FMath::RandRange(0, 100);
-			if (t >= 0 && t <= 5)
-			{
-				GetWorld()->SpawnActor<ARoom5Class>(GameInstance->GetRoom5Class(), location, RandomRotation());
-			}
-			else if (t > 5 && t <= 10)
-			{
-				GetWorld()->SpawnActor<ARoom4Class>(GameInstance->GetRoom4Class(), location, RandomRotation());
-			}
-			else if (t > 10 && t <= 15)
-			{
-				GetWorld()->SpawnActor<ARoom3Class>(GameInstance->GetRoom3Class(), location, RandomRotation());
-			}
-			else if (t > 15 && t <= 50)
-			{
-				GetWorld()->SpawnActor<ARoom2Class>(GameInstance->GetRoom2Class(), location, RandomRotation());
-			}
-			else
-			{
-				GetWorld()->SpawnActor<ARoom1Class>(GameInstance->GetRoom1Class(), location, RandomRotation());
-			}
+			GetWorld()->SpawnActor<AEmptyRoomClass>(GameInstance->GetEmptyRoomClass(), location, RandomRotation());
+		}
+		else
+		{
+			GetWorld()->SpawnActor<ARoom4Class>(GameInstance->GetRoom4Class(), location, RandomRotation());
 		}
 	}
-
-	//this spawns in the rest of the edges
-	
 }
 
 void ALandscapeGenerator::SpawnPathRooms(FVector p)

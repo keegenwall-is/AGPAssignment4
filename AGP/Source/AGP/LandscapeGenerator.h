@@ -36,6 +36,7 @@ protected:
 	virtual void BeginPlay() override;
 
 	void PopulateArray();
+	void SpawnOutside();
 	void DrawGrid();
 	void DrawPath();
 	void GenerateRooms();
@@ -58,6 +59,8 @@ protected:
 	TArray<FVector> Edges4;
 	TArray<FVector> Corners;
 	TArray<FVector> AllOptions;
+	TArray<FVector> Outsides;
+	
 
 	virtual bool ShouldTickIfViewportsOnly() const override;
 

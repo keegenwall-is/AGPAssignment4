@@ -9,6 +9,7 @@
 #include "Room3Class.h"
 #include "Room4Class.h"
 #include "Room5Class.h"
+#include "EmptyRoomClass.h"
 #include "PCGGameInstance.generated.h"
 
 class ARoom1Class;
@@ -18,6 +19,7 @@ class ARoom4Class;
 class ARoom5Class;
 class ATableClass;
 class ATableChairClass;
+class AEmptyRoomClass;
 /**
  *
  */
@@ -34,7 +36,7 @@ public:
 	UClass* GetRoom5Class() const;
 	UClass* GetTableClass() const;
 	UClass* GetTableChairClass() const;
-	UClass* GetNavigationNode() const;
+	UClass* GetEmptyRoomClass() const;
 
 protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Room Classes")
@@ -51,6 +53,9 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Room Classes")
 	TSubclassOf<ARoom5Class> Room5Class;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Room Classes")
+	TSubclassOf<AEmptyRoomClass> EmptyRoomClass;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Object Classes")
 	TSubclassOf<ATableClass> TableClass;

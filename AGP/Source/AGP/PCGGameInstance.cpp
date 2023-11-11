@@ -9,6 +9,7 @@
 #include "Room2Class.h"
 #include "Room3Class.h"
 #include "Room4Class.h"
+#include "EmptyRoomClass.h"
 #include "TableChairClass.h"
 #include "TableClass.h"
 
@@ -18,6 +19,7 @@ class ARoom3Class;
 class ARoom4Class;
 class ARoom5Class;
 class ATableClass;
+class AEmptyRoomClass;
 
 UClass* UPCGGameInstance::GetRoom1Class() const
 {
@@ -52,5 +54,10 @@ UClass* UPCGGameInstance::GetTableClass() const
 UClass* UPCGGameInstance::GetTableChairClass() const
 {
 	return TableChairClass.Get();
+}
+
+UClass* UPCGGameInstance::GetEmptyRoomClass() const
+{
+	return EmptyRoomClass.Get();
 }
 
