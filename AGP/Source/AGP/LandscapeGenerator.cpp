@@ -39,19 +39,19 @@ void ALandscapeGenerator::BeginPlay()
 
 	
 	
+	
+	Super::BeginPlay();
+	
+
+	if (GetLocalRole() != ROLE_Authority)
+	{    
+		return;
+	}
+	
 	pathfindingSubsystem = GetWorld()->GetSubsystem<UPathfindingSubsystem>();
 	pathfindingSubsystem->PlaceProceduralNodes(width, height);
 	pathfindingSubsystem->PopulateNodes();
-	
-	Super::BeginPlay();
 	/*
-	if (GetLocalRole() != ROLE_Authority)
-	{
-		pathfindingSubsystem->RemoveAllNodes();
-		return;
-	}*/
-
-	
 	for (TActorIterator<APlayerCharacter> It(GetWorld()); It; ++It)
 	{
 		players.Add(*It);
@@ -70,7 +70,7 @@ void ALandscapeGenerator::BeginPlay()
 	for (AEnemyCharacter* enemy : enemies)
 	{
 		enemy->SetActorLocation(EndPoint);
-	}
+	}*/
 
 	//ServerCheckVisibility();
 	GenerateWorld();
