@@ -79,7 +79,7 @@ void AEnemyCharacter::TickEngage()
 		CurrentPath = PathfindingSubsystem->GetPath(GetActorLocation(), SensedCharacter->GetActorLocation());
 	}
 	MoveAlongPath();
-	//Fire();
+	Fire(SensedCharacter->GetActorLocation());
 	
 }
 
@@ -88,26 +88,9 @@ void AEnemyCharacter::TickEvade()
 	// Find the player and return if it can't find it.
 	//if (!SensedCharacter) return;
 
-	ALampPickup* NearestLamp = nullptr;
-	float NearestDistance = MAX_FLT;
-	
-	for (TActorIterator<ALampPickup> It(GetWorld()); It; ++It)
-	{
-		ALampPickup* Bell = *It;
-		if (Bell)
-		{
-			float Distance = FVector::Dist(this->GetActorLocation(), Bell->GetActorLocation());
-			if (Distance < NearestDistance)
-			{
-				NearestDistance = Distance;
-				NearestLamp = Bell;
-			}
-		}
-	}
-	
 	if (CurrentPath.IsEmpty())
 	{
-		CurrentPath = PathfindingSubsystem->GetPathAway(GetActorLocation(),NearestLamp->GetActorLocation());
+		CurrentPath = PathfindingSubsystem->GetPathAway(GetActorLocation(), SensedCharacter->GetActorLocation());
 	}
 	MoveAlongPath();
 }
@@ -169,11 +152,16 @@ void AEnemyCharacter::UpdateSight()
 
 void AEnemyCharacter::CheckVisibility()
 {
-	//if (GetLocalRole() == ROLE_AutonomousProxy)
-	//{
-		CheckVisibilityImplementation();
-		MulticastCheckVisibility_Implementation();
-	//}
+
+	float Distance = FVector::Dist(this->GetActorLocation(), SensedCharacter->GetActorLocation());
+	if (Distance < 200.0f)
+	{
+		this->SetActorHiddenInGame(false);
+	} else
+	{
+		this->SetActorHiddenInGame(true);
+	}
+	
 }
 
 void AEnemyCharacter::OnBellHeard(float Volume)
@@ -204,7 +192,7 @@ void AEnemyCharacter::Tick(float DeltaTime)
 	case EEnemyState::Patrol:
 		TickPatrol();
 		this->SetActorHiddenInGame(false);
-		//UE_LOG(LogTemp, Display, TEXT("Patrolling"))
+		UE_LOG(LogTemp, Display, TEXT("Patrolling"))
 		if (SensedCharacter)
 		{
 			if (HealthComponent->GetCurrentHealthPercentage() >= 0.4f)
@@ -219,7 +207,7 @@ void AEnemyCharacter::Tick(float DeltaTime)
 		break;
 	case EEnemyState::Engage:
 		TickEngage();
-		//UE_LOG(LogTemp, Display, TEXT("Engaging"))
+		UE_LOG(LogTemp, Display, TEXT("Engaging"))
 		
 		if (!SensedCharacter)
 		{
@@ -228,7 +216,7 @@ void AEnemyCharacter::Tick(float DeltaTime)
 		break;
 	case EEnemyState::Evade:
 		TickEvade();
-		//UE_LOG(LogTemp, Display, TEXT("Evading"))
+		UE_LOG(LogTemp, Display, TEXT("Evading"))
 		this->SetActorHiddenInGame(false);
 		if (CurrentPath.IsEmpty())
 		{
@@ -237,7 +225,7 @@ void AEnemyCharacter::Tick(float DeltaTime)
 		break;
 	case EEnemyState::Investigate:
 		TickInvestigate();
-		//UE_LOG(LogTemp, Display, TEXT("Investigating"))
+		UE_LOG(LogTemp, Display, TEXT("Investigating"))
 		this->SetActorHiddenInGame(false);
 		if (CurrentPath.IsEmpty())
 		{
@@ -278,35 +266,5 @@ APlayerCharacter* AEnemyCharacter::FindPlayer() const
 		UE_LOG(LogTemp, Error, TEXT("Unable to find the Player Character in the world."))
 	}
 	return Player;
-}
-
-void AEnemyCharacter::CheckVisibilityImplementation()
-{
-	TArray<APlayerCharacter*> Players;
-	for (TActorIterator<APlayerCharacter> It(GetWorld()); It; ++It)
-	{
-		Players.Add(*It);
-	}
-
-	for (APlayerCharacter* Player : Players)
-	{
-		if (Player)
-		{
-			float Distance = FVector::Dist(this->GetActorLocation(), Player->GetActorLocation());
-			if (Distance < 200.0f)
-			{
-				// If the player is within the visibility range, don't hide the AI
-				this->SetActorHiddenInGame(false);
-			} else
-			{
-				this->SetActorHiddenInGame(true);
-			}
-		}
-	}
-}
-
-void AEnemyCharacter::MulticastCheckVisibility_Implementation()
-{
-	CheckVisibilityImplementation();
 }
 

@@ -2,10 +2,6 @@
 	"BuildId": "25360045",
 	"Modules": 
 	{
-<<<<<<< HEAD
 		"AGP": "UnrealEditor-AGP-8693.dll"
-=======
-		"AGP": "UnrealEditor-AGP-4553.dll"
->>>>>>> Multiplayer
 	}
 }

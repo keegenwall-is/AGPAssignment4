@@ -23,10 +23,40 @@ void ABaseCharacter::BeginPlay()
 	
 }
 
-void ABaseCharacter::Fire()
+bool ABaseCharacter::Fire(const FVector& FireAtLocation)
 {
-	FireImplementation();
-	MulticastFire_Implementation();
+	// Determine if the character is able to fire.
+	if (TimeSinceLastShot < MinTimeBetweenShots)
+	{
+		return false;
+	}
+
+	FHitResult HitResult;
+	FCollisionQueryParams QueryParams;
+	QueryParams.AddIgnoredActor(this);
+	if (GetWorld()->LineTraceSingleByChannel(HitResult, BulletStartPosition->GetComponentLocation(), FireAtLocation, ECC_Pawn, QueryParams))
+	{
+		if (ABaseCharacter* HitCharacter = Cast<ABaseCharacter>(HitResult.GetActor()))
+		{
+			if (UHealthComponent* HitCharacterHealth = HitCharacter->GetComponentByClass<UHealthComponent>())
+			{
+				HitCharacterHealth->ApplyDamage(WeaponDamage);
+			}
+			DrawDebugLine(GetWorld(), BulletStartPosition->GetComponentLocation(), HitResult.ImpactPoint, FColor::Green, false, 1.0f);
+		}
+		else
+		{
+			DrawDebugLine(GetWorld(), BulletStartPosition->GetComponentLocation(), HitResult.ImpactPoint, FColor::Orange, false, 1.0f);
+		}
+		
+	}
+	else
+	{
+		DrawDebugLine(GetWorld(), BulletStartPosition->GetComponentLocation(), FireAtLocation, FColor::Red, false, 1.0f);
+	}
+
+	TimeSinceLastShot = 0.0f;
+	return true;
 }
 
 // Called every frame
@@ -45,32 +75,8 @@ bool ABaseCharacter::HasWeapon()
 	return bHasWeaponEquipped;
 }
 
-bool ABaseCharacter::GetIsFiring()
-{
-	return bIsFiring;
-}
-
 void ABaseCharacter::EquipWeapon(bool bEquipWeapon)
 {
-
-	//if (GetLocalRole() == ROLE_Authority)
-	//{
-		EquipWeaponImplementation(bEquipWeapon);
-		MulticastEquipWeapon_Implementation(bEquipWeapon);
-	//}
-	
-}
-
-// Called to bind functionality to input
-void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
-}
-
-void ABaseCharacter::EquipWeaponImplementation(bool bEquipWeapon)
-{
-
 	bHasWeaponEquipped = bEquipWeapon;
 	EquipWeaponGraphical(bEquipWeapon);
 	if (bEquipWeapon)
@@ -81,26 +87,12 @@ void ABaseCharacter::EquipWeaponImplementation(bool bEquipWeapon)
 	{
 		UE_LOG(LogTemp, Display, TEXT("Player has unequipped weapon."))
 	}
-	
 }
 
-void ABaseCharacter::FireImplementation()
+// Called to bind functionality to input
+void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
-	if (HasWeapon())
-	{
-		bIsFiring = !bIsFiring;
-		UE_LOG(LogTemp, Display, TEXT("Player is shooting weapon. bIsFiring = %s"), bIsFiring ? TEXT("true") : TEXT("false"));
-		FiringGraphical(bIsFiring);
-	}
-}
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-void ABaseCharacter::MulticastFire_Implementation()
-{
-	FireImplementation();
-}
-
-void ABaseCharacter::MulticastEquipWeapon_Implementation(bool bEquipWeapon)
-{
-	EquipWeaponImplementation(bEquipWeapon);
 }
 

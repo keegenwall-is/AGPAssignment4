@@ -83,13 +83,6 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacter() {}
 		}
 		return Z_Registration_Info_UEnum_EEnemyState.InnerSingleton;
 	}
-	DEFINE_FUNCTION(AEnemyCharacter::execMulticastCheckVisibility)
-	{
-		P_FINISH;
-		P_NATIVE_BEGIN;
-		P_THIS->MulticastCheckVisibility_Implementation();
-		P_NATIVE_END;
-	}
 	DEFINE_FUNCTION(AEnemyCharacter::execOnSensedPawn)
 	{
 		P_GET_OBJECT(APawn,Z_Param_SensedActor);
@@ -98,41 +91,13 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacter() {}
 		P_THIS->OnSensedPawn(Z_Param_SensedActor);
 		P_NATIVE_END;
 	}
-	static FName NAME_AEnemyCharacter_MulticastCheckVisibility = FName(TEXT("MulticastCheckVisibility"));
-	void AEnemyCharacter::MulticastCheckVisibility()
-	{
-		ProcessEvent(FindFunctionChecked(NAME_AEnemyCharacter_MulticastCheckVisibility),NULL);
-	}
 	void AEnemyCharacter::StaticRegisterNativesAEnemyCharacter()
 	{
 		UClass* Class = AEnemyCharacter::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
-			{ "MulticastCheckVisibility", &AEnemyCharacter::execMulticastCheckVisibility },
 			{ "OnSensedPawn", &AEnemyCharacter::execOnSensedPawn },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
-	}
-	struct Z_Construct_UFunction_AEnemyCharacter_MulticastCheckVisibility_Statics
-	{
-#if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
-#endif
-		static const UECodeGen_Private::FFunctionParams FuncParams;
-	};
-#if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AEnemyCharacter_MulticastCheckVisibility_Statics::Function_MetaDataParams[] = {
-		{ "ModuleRelativePath", "Characters/EnemyCharacter.h" },
-	};
-#endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AEnemyCharacter_MulticastCheckVisibility_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEnemyCharacter, nullptr, "MulticastCheckVisibility", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00044CC1, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AEnemyCharacter_MulticastCheckVisibility_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AEnemyCharacter_MulticastCheckVisibility_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_AEnemyCharacter_MulticastCheckVisibility()
-	{
-		static UFunction* ReturnFunction = nullptr;
-		if (!ReturnFunction)
-		{
-			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AEnemyCharacter_MulticastCheckVisibility_Statics::FuncParams);
-		}
-		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_AEnemyCharacter_OnSensedPawn_Statics
 	{
@@ -220,7 +185,6 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacter() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_AGP,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AEnemyCharacter_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_AEnemyCharacter_MulticastCheckVisibility, "MulticastCheckVisibility" }, // 2649339684
 		{ &Z_Construct_UFunction_AEnemyCharacter_OnSensedPawn, "OnSensedPawn" }, // 2033150074
 	};
 #if WITH_METADATA
@@ -340,16 +304,11 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacter() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AEnemyCharacter);
 	AEnemyCharacter::~AEnemyCharacter() {}
-<<<<<<< HEAD
 	struct Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics
-=======
-	struct Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics
->>>>>>> Multiplayer
 	{
 		static const FEnumRegisterCompiledInInfo EnumInfo[];
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-<<<<<<< HEAD
 	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::EnumInfo[] = {
 		{ EEnemyState_StaticEnum, TEXT("EEnemyState"), &Z_Registration_Info_UEnum_EEnemyState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 328182112U) },
 	};
@@ -360,16 +319,4 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacter() {}
 		Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::EnumInfo));
-=======
-	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::EnumInfo[] = {
-		{ EEnemyState_StaticEnum, TEXT("EEnemyState"), &Z_Registration_Info_UEnum_EEnemyState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 328182112U) },
-	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemyCharacter, AEnemyCharacter::StaticClass, TEXT("AEnemyCharacter"), &Z_Registration_Info_UClass_AEnemyCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyCharacter), 2764457281U) },
-	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_87949629(TEXT("/Script/AGP"),
-		Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::ClassInfo),
-		nullptr, 0,
-		Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::EnumInfo));
->>>>>>> Multiplayer
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

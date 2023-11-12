@@ -14,19 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AGP_LampPickup_generated_h
 
-<<<<<<< HEAD
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_SPARSE_DATA
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_RPC_WRAPPERS
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_RPC_WRAPPERS_NO_PURE_DECLS
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_ACCESSORS
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_INCLASS_NO_PURE_DECLS \
-=======
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_SPARSE_DATA
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_RPC_WRAPPERS
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_RPC_WRAPPERS_NO_PURE_DECLS
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_ACCESSORS
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_INCLASS_NO_PURE_DECLS \
->>>>>>> Multiplayer
 private: \
 	static void StaticRegisterNativesALampPickup(); \
 	friend struct Z_Construct_UClass_ALampPickup_Statics; \
@@ -35,11 +27,7 @@ public: \
 	DECLARE_SERIALIZER(ALampPickup)
 
 
-<<<<<<< HEAD
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_INCLASS \
-=======
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_INCLASS \
->>>>>>> Multiplayer
 private: \
 	static void StaticRegisterNativesALampPickup(); \
 	friend struct Z_Construct_UClass_ALampPickup_Statics; \
@@ -48,11 +36,7 @@ public: \
 	DECLARE_SERIALIZER(ALampPickup)
 
 
-<<<<<<< HEAD
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_STANDARD_CONSTRUCTORS \
-=======
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_STANDARD_CONSTRUCTORS \
->>>>>>> Multiplayer
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ALampPickup(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ALampPickup) \
@@ -66,11 +50,7 @@ public: \
 	NO_API virtual ~ALampPickup();
 
 
-<<<<<<< HEAD
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_ENHANCED_CONSTRUCTORS \
->>>>>>> Multiplayer
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ALampPickup(ALampPickup&&); \
@@ -82,7 +62,6 @@ public: \
 	NO_API virtual ~ALampPickup();
 
 
-<<<<<<< HEAD
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_13_PROLOG
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
@@ -92,22 +71,10 @@ public: \
 	FID_GitHub_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_ACCESSORS \
 	FID_GitHub_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_INCLASS \
 	FID_GitHub_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_STANDARD_CONSTRUCTORS \
-=======
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_13_PROLOG
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_GENERATED_BODY_LEGACY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_SPARSE_DATA \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_RPC_WRAPPERS \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_ACCESSORS \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_INCLASS \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_STANDARD_CONSTRUCTORS \
->>>>>>> Multiplayer
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-<<<<<<< HEAD
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
@@ -116,16 +83,6 @@ public: \
 	FID_GitHub_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_ACCESSORS \
 	FID_GitHub_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_INCLASS_NO_PURE_DECLS \
 	FID_GitHub_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_SPARSE_DATA \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_ACCESSORS \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_INCLASS_NO_PURE_DECLS \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h_16_ENHANCED_CONSTRUCTORS \
->>>>>>> Multiplayer
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -133,11 +90,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> AGP_API UClass* StaticClass<class ALampPickup>();
 
 #undef CURRENT_FILE_ID
-<<<<<<< HEAD
 #define CURRENT_FILE_ID FID_GitHub_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h
-=======
-#define CURRENT_FILE_ID FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Pickups_LampPickup_h
->>>>>>> Multiplayer
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

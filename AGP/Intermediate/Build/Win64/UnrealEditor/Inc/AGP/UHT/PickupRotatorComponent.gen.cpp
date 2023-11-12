@@ -90,7 +90,6 @@ void EmptyLinkFunctionForGeneratedCodePickupRotatorComponent() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UPickupRotatorComponent);
 	UPickupRotatorComponent::~UPickupRotatorComponent() {}
-<<<<<<< HEAD
 	struct Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_PickupRotatorComponent_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
@@ -100,17 +99,6 @@ void EmptyLinkFunctionForGeneratedCodePickupRotatorComponent() {}
 	};
 	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_PickupRotatorComponent_h_2553309328(TEXT("/Script/AGP"),
 		Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_PickupRotatorComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_PickupRotatorComponent_h_Statics::ClassInfo),
-=======
-	struct Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_PickupRotatorComponent_h_Statics
-	{
-		static const FClassRegisterCompiledInInfo ClassInfo[];
-	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_PickupRotatorComponent_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UPickupRotatorComponent, UPickupRotatorComponent::StaticClass, TEXT("UPickupRotatorComponent"), &Z_Registration_Info_UClass_UPickupRotatorComponent, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UPickupRotatorComponent), 4223933404U) },
-	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_PickupRotatorComponent_h_2553309328(TEXT("/Script/AGP"),
-		Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_PickupRotatorComponent_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_PickupRotatorComponent_h_Statics::ClassInfo),
->>>>>>> Multiplayer
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

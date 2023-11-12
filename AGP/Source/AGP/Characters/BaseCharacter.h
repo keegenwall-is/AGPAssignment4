@@ -20,22 +20,15 @@ public:
 	UFUNCTION(BlueprintCallable)
 	bool HasWeapon();
 
-	bool GetIsFiring();
-
 	void EquipWeapon(bool bEquipWeapon);
 	UFUNCTION(BlueprintImplementableEvent)
 	void EquipWeaponGraphical(bool bEquipWeapon);
-
-	UFUNCTION(BlueprintImplementableEvent)
-	void FiringGraphical(bool bReturnIsFiring);
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 	bool bHasWeaponEquipped = false;
-
-	bool bIsFiring = false;
 
 	/**
 	 * Will be updated each frame and be used to determine if a shot can be taken.
@@ -67,7 +60,7 @@ protected:
 	 * @param FireAtLocation The location that you want to fire at.
 	 * @return true if a shot was taken and false otherwise.
 	 */
-	void Fire();
+	bool Fire(const FVector& FireAtLocation);
 
 public:	
 	// Called every frame
@@ -75,16 +68,5 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
-private:
-	void EquipWeaponImplementation(bool bEquipWeapon);
-
-	UFUNCTION(NetMulticast, Reliable)
-	void MulticastEquipWeapon(bool bEquipWeapon);
-
-	void FireImplementation();
-
-	UFUNCTION(NetMulticast, Reliable)
-	void MulticastFire();
 
 };

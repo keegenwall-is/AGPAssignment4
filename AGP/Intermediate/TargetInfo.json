@@ -2,20 +2,12 @@
 	"Targets": [
 		{
 			"Name": "AGP",
-<<<<<<< HEAD
 			"Path": "D:\\GitHub\\AGPAssignment4\\AGP\\Source\\AGP.Target.cs",
-=======
-			"Path": "C:\\Users\\keege\\OneDrive\\Documents\\AGPAssignment4\\AGPAssignment4\\AGP\\Source\\AGP.Target.cs",
->>>>>>> Multiplayer
 			"Type": "Game"
 		},
 		{
 			"Name": "AGPEditor",
-<<<<<<< HEAD
 			"Path": "D:\\GitHub\\AGPAssignment4\\AGP\\Source\\AGPEditor.Target.cs",
-=======
-			"Path": "C:\\Users\\keege\\OneDrive\\Documents\\AGPAssignment4\\AGPAssignment4\\AGP\\Source\\AGPEditor.Target.cs",
->>>>>>> Multiplayer
 			"Type": "Editor"
 		}
 	]

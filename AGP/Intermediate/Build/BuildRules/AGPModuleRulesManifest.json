@@ -1,14 +1,8 @@
 {
 	"SourceFiles": [
-<<<<<<< HEAD
 		"D:\\GitHub\\AGPAssignment4\\AGP\\Source\\AGP\\AGP.Build.cs",
 		"D:\\GitHub\\AGPAssignment4\\AGP\\Source\\AGP.Target.cs",
 		"D:\\GitHub\\AGPAssignment4\\AGP\\Source\\AGPEditor.Target.cs"
-=======
-		"C:\\Users\\keege\\OneDrive\\Documents\\AGPAssignment4\\AGPAssignment4\\AGP\\Source\\AGP\\AGP.Build.cs",
-		"C:\\Users\\keege\\OneDrive\\Documents\\AGPAssignment4\\AGPAssignment4\\AGP\\Source\\AGP.Target.cs",
-		"C:\\Users\\keege\\OneDrive\\Documents\\AGPAssignment4\\AGPAssignment4\\AGP\\Source\\AGPEditor.Target.cs"
->>>>>>> Multiplayer
 	],
 	"EngineVersion": "5.2.1"
 }

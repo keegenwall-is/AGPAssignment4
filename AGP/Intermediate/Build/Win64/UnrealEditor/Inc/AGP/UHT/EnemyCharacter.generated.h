@@ -15,38 +15,19 @@ class APawn;
 #endif
 #define AGP_EnemyCharacter_generated_h
 
-<<<<<<< HEAD
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_SPARSE_DATA
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_RPC_WRAPPERS \
-=======
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_SPARSE_DATA
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_RPC_WRAPPERS \
-	virtual void MulticastCheckVisibility_Implementation(); \
->>>>>>> Multiplayer
  \
-	DECLARE_FUNCTION(execMulticastCheckVisibility); \
 	DECLARE_FUNCTION(execOnSensedPawn);
 
 
-<<<<<<< HEAD
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_RPC_WRAPPERS_NO_PURE_DECLS \
-=======
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_RPC_WRAPPERS_NO_PURE_DECLS \
-	virtual void MulticastCheckVisibility_Implementation(); \
->>>>>>> Multiplayer
  \
-	DECLARE_FUNCTION(execMulticastCheckVisibility); \
 	DECLARE_FUNCTION(execOnSensedPawn);
 
 
-<<<<<<< HEAD
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_ACCESSORS
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_INCLASS_NO_PURE_DECLS \
-=======
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_ACCESSORS
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_CALLBACK_WRAPPERS
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_INCLASS_NO_PURE_DECLS \
->>>>>>> Multiplayer
 private: \
 	static void StaticRegisterNativesAEnemyCharacter(); \
 	friend struct Z_Construct_UClass_AEnemyCharacter_Statics; \
@@ -56,11 +37,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<AEnemyCharacter*>(this); }
 
 
-<<<<<<< HEAD
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_INCLASS \
-=======
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_INCLASS \
->>>>>>> Multiplayer
 private: \
 	static void StaticRegisterNativesAEnemyCharacter(); \
 	friend struct Z_Construct_UClass_AEnemyCharacter_Statics; \
@@ -70,11 +47,7 @@ public: \
 	virtual UObject* _getUObject() const override { return const_cast<AEnemyCharacter*>(this); }
 
 
-<<<<<<< HEAD
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_STANDARD_CONSTRUCTORS \
-=======
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_STANDARD_CONSTRUCTORS \
->>>>>>> Multiplayer
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AEnemyCharacter(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AEnemyCharacter) \
@@ -88,11 +61,7 @@ public: \
 	NO_API virtual ~AEnemyCharacter();
 
 
-<<<<<<< HEAD
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_ENHANCED_CONSTRUCTORS \
->>>>>>> Multiplayer
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AEnemyCharacter(AEnemyCharacter&&); \
@@ -104,7 +73,6 @@ public: \
 	NO_API virtual ~AEnemyCharacter();
 
 
-<<<<<<< HEAD
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_36_PROLOG
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
@@ -114,23 +82,10 @@ public: \
 	FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_ACCESSORS \
 	FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_INCLASS \
 	FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_STANDARD_CONSTRUCTORS \
-=======
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_36_PROLOG
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_GENERATED_BODY_LEGACY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_SPARSE_DATA \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_RPC_WRAPPERS \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_ACCESSORS \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_CALLBACK_WRAPPERS \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_INCLASS \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_STANDARD_CONSTRUCTORS \
->>>>>>> Multiplayer
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-<<<<<<< HEAD
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
@@ -139,17 +94,6 @@ public: \
 	FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_ACCESSORS \
 	FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_INCLASS_NO_PURE_DECLS \
 	FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_SPARSE_DATA \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_ACCESSORS \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_CALLBACK_WRAPPERS \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_INCLASS_NO_PURE_DECLS \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_39_ENHANCED_CONSTRUCTORS \
->>>>>>> Multiplayer
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -157,11 +101,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> AGP_API UClass* StaticClass<class AEnemyCharacter>();
 
 #undef CURRENT_FILE_ID
-<<<<<<< HEAD
 #define CURRENT_FILE_ID FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h
-=======
-#define CURRENT_FILE_ID FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h
->>>>>>> Multiplayer
 
 
 #define FOREACH_ENUM_EENEMYSTATE(op) \

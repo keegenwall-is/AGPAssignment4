@@ -14,19 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AGP_AGPGameModeBase_generated_h
 
-<<<<<<< HEAD
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_SPARSE_DATA
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_RPC_WRAPPERS
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_ACCESSORS
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
-=======
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_SPARSE_DATA
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_RPC_WRAPPERS
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_ACCESSORS
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
->>>>>>> Multiplayer
 private: \
 	static void StaticRegisterNativesAAGPGameModeBase(); \
 	friend struct Z_Construct_UClass_AAGPGameModeBase_Statics; \
@@ -35,11 +27,7 @@ public: \
 	DECLARE_SERIALIZER(AAGPGameModeBase)
 
 
-<<<<<<< HEAD
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_INCLASS \
-=======
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_INCLASS \
->>>>>>> Multiplayer
 private: \
 	static void StaticRegisterNativesAAGPGameModeBase(); \
 	friend struct Z_Construct_UClass_AAGPGameModeBase_Statics; \
@@ -48,11 +36,7 @@ public: \
 	DECLARE_SERIALIZER(AAGPGameModeBase)
 
 
-<<<<<<< HEAD
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_STANDARD_CONSTRUCTORS \
-=======
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_STANDARD_CONSTRUCTORS \
->>>>>>> Multiplayer
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AAGPGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AAGPGameModeBase) \
@@ -66,11 +50,7 @@ public: \
 	NO_API virtual ~AAGPGameModeBase();
 
 
-<<<<<<< HEAD
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_ENHANCED_CONSTRUCTORS \
->>>>>>> Multiplayer
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AAGPGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
@@ -84,7 +64,6 @@ public: \
 	NO_API virtual ~AAGPGameModeBase();
 
 
-<<<<<<< HEAD
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_12_PROLOG
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
@@ -94,22 +73,10 @@ public: \
 	FID_GitHub_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_ACCESSORS \
 	FID_GitHub_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_INCLASS \
 	FID_GitHub_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_STANDARD_CONSTRUCTORS \
-=======
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_12_PROLOG
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_GENERATED_BODY_LEGACY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_SPARSE_DATA \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_RPC_WRAPPERS \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_ACCESSORS \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_INCLASS \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_STANDARD_CONSTRUCTORS \
->>>>>>> Multiplayer
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-<<<<<<< HEAD
 #define FID_GitHub_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
@@ -118,16 +85,6 @@ public: \
 	FID_GitHub_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_ACCESSORS \
 	FID_GitHub_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
 	FID_GitHub_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_ENHANCED_CONSTRUCTORS \
-=======
-#define FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_GENERATED_BODY \
-PRAGMA_DISABLE_DEPRECATION_WARNINGS \
-public: \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_SPARSE_DATA \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_ACCESSORS \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
-	FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h_15_ENHANCED_CONSTRUCTORS \
->>>>>>> Multiplayer
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -135,11 +92,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> AGP_API UClass* StaticClass<class AAGPGameModeBase>();
 
 #undef CURRENT_FILE_ID
-<<<<<<< HEAD
 #define CURRENT_FILE_ID FID_GitHub_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h
-=======
-#define CURRENT_FILE_ID FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_AGPGameModeBase_h
->>>>>>> Multiplayer
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
