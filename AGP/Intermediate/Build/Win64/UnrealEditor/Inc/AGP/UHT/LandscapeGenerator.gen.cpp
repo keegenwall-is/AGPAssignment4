@@ -17,8 +17,82 @@ void EmptyLinkFunctionForGeneratedCodeLandscapeGenerator() {}
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_AGP();
 // End Cross Module References
+	DEFINE_FUNCTION(ALandscapeGenerator::execMulticastCheckVisibility)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->MulticastCheckVisibility_Implementation();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ALandscapeGenerator::execServerCheckVisibility)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->ServerCheckVisibility_Implementation();
+		P_NATIVE_END;
+	}
+	static FName NAME_ALandscapeGenerator_MulticastCheckVisibility = FName(TEXT("MulticastCheckVisibility"));
+	void ALandscapeGenerator::MulticastCheckVisibility()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_ALandscapeGenerator_MulticastCheckVisibility),NULL);
+	}
+	static FName NAME_ALandscapeGenerator_ServerCheckVisibility = FName(TEXT("ServerCheckVisibility"));
+	void ALandscapeGenerator::ServerCheckVisibility()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_ALandscapeGenerator_ServerCheckVisibility),NULL);
+	}
 	void ALandscapeGenerator::StaticRegisterNativesALandscapeGenerator()
 	{
+		UClass* Class = ALandscapeGenerator::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "MulticastCheckVisibility", &ALandscapeGenerator::execMulticastCheckVisibility },
+			{ "ServerCheckVisibility", &ALandscapeGenerator::execServerCheckVisibility },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_ALandscapeGenerator_MulticastCheckVisibility_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ALandscapeGenerator_MulticastCheckVisibility_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "LandscapeGenerator.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ALandscapeGenerator_MulticastCheckVisibility_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ALandscapeGenerator, nullptr, "MulticastCheckVisibility", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00084CC0, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ALandscapeGenerator_MulticastCheckVisibility_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ALandscapeGenerator_MulticastCheckVisibility_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ALandscapeGenerator_MulticastCheckVisibility()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ALandscapeGenerator_MulticastCheckVisibility_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ALandscapeGenerator_ServerCheckVisibility_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ALandscapeGenerator_ServerCheckVisibility_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "LandscapeGenerator.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ALandscapeGenerator_ServerCheckVisibility_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ALandscapeGenerator, nullptr, "ServerCheckVisibility", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00280CC0, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ALandscapeGenerator_ServerCheckVisibility_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ALandscapeGenerator_ServerCheckVisibility_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ALandscapeGenerator_ServerCheckVisibility()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ALandscapeGenerator_ServerCheckVisibility_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(ALandscapeGenerator);
 	UClass* Z_Construct_UClass_ALandscapeGenerator_NoRegister()
@@ -28,6 +102,7 @@ void EmptyLinkFunctionForGeneratedCodeLandscapeGenerator() {}
 	struct Z_Construct_UClass_ALandscapeGenerator_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -67,6 +142,10 @@ void EmptyLinkFunctionForGeneratedCodeLandscapeGenerator() {}
 	UObject* (*const Z_Construct_UClass_ALandscapeGenerator_Statics::DependentSingletons[])() = {
 		(UObject* (*)())Z_Construct_UClass_AActor,
 		(UObject* (*)())Z_Construct_UPackage__Script_AGP,
+	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_ALandscapeGenerator_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_ALandscapeGenerator_MulticastCheckVisibility, "MulticastCheckVisibility" }, // 116021032
+		{ &Z_Construct_UFunction_ALandscapeGenerator_ServerCheckVisibility, "ServerCheckVisibility" }, // 3486473117
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ALandscapeGenerator_Statics::Class_MetaDataParams[] = {
@@ -143,11 +222,11 @@ void EmptyLinkFunctionForGeneratedCodeLandscapeGenerator() {}
 		"Engine",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		Z_Construct_UClass_ALandscapeGenerator_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		0,
+		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_ALandscapeGenerator_Statics::PropPointers),
 		0,
 		0x009000A4u,
@@ -167,15 +246,15 @@ void EmptyLinkFunctionForGeneratedCodeLandscapeGenerator() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ALandscapeGenerator);
 	ALandscapeGenerator::~ALandscapeGenerator() {}
-	struct Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_Statics
+	struct Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ALandscapeGenerator, ALandscapeGenerator::StaticClass, TEXT("ALandscapeGenerator"), &Z_Registration_Info_UClass_ALandscapeGenerator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ALandscapeGenerator), 488647631U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_ALandscapeGenerator, ALandscapeGenerator::StaticClass, TEXT("ALandscapeGenerator"), &Z_Registration_Info_UClass_ALandscapeGenerator, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ALandscapeGenerator), 3030774741U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_583428034(TEXT("/Script/AGP"),
-		Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_10551662(TEXT("/Script/AGP"),
+		Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

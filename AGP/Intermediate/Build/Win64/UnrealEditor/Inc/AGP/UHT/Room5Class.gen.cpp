@@ -73,15 +73,15 @@ void EmptyLinkFunctionForGeneratedCodeRoom5Class() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ARoom5Class);
 	ARoom5Class::~ARoom5Class() {}
-	struct Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Room5Class_h_Statics
+	struct Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Room5Class_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Room5Class_h_Statics::ClassInfo[] = {
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Room5Class_h_Statics::ClassInfo[] = {
 		{ Z_Construct_UClass_ARoom5Class, ARoom5Class::StaticClass, TEXT("ARoom5Class"), &Z_Registration_Info_UClass_ARoom5Class, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ARoom5Class), 2614566393U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Room5Class_h_493495096(TEXT("/Script/AGP"),
-		Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Room5Class_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Room5Class_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Room5Class_h_493495096(TEXT("/Script/AGP"),
+		Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Room5Class_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Room5Class_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

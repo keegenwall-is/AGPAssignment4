@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "AGP",
-			"Path": "C:\\Users\\keege\\OneDrive\\Documents\\AGPAssignment4\\AGPAssignment4\\AGP\\Source\\AGP.Target.cs",
+			"Path": "D:\\GitHub\\AGPAssignment4\\AGP\\Source\\AGP.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "AGPEditor",
-			"Path": "C:\\Users\\keege\\OneDrive\\Documents\\AGPAssignment4\\AGPAssignment4\\AGP\\Source\\AGPEditor.Target.cs",
+			"Path": "D:\\GitHub\\AGPAssignment4\\AGP\\Source\\AGPEditor.Target.cs",
 			"Type": "Editor"
 		}
 	]

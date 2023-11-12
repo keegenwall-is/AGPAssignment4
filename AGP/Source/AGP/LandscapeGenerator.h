@@ -44,6 +44,7 @@ protected:
 	void DrawPath();
 	void GenerateRooms();
 	void SpawnLamps();
+	void GenerateWorld();
 	void SpawnPathRooms(FVector p);
 	void GenerateNodes();
 	FRotator RandomRotation();
@@ -85,9 +86,17 @@ protected:
 	TArray<APlayerCharacter*> players;
 	TArray<AEnemyCharacter*> enemies;
 
+	UFUNCTION(Server, Reliable)
+	void ServerCheckVisibility();
+	
+	UFUNCTION(NetMulticast, Reliable)
+	void MulticastCheckVisibility();
+
 
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	
 
 };

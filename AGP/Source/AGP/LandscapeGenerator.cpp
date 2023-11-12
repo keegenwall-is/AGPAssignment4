@@ -10,6 +10,7 @@
 #include "Room2Class.h"
 #include "Room3Class.h"
 #include "Room4Class.h"
+#include "EmptyRoomClass.h"
 #include "Room5Class.h"
 #include "TableChairClass.h"
 #include "TableClass.h"
@@ -21,6 +22,7 @@ class ARoom1Class;
 class ARoom2Class;
 class ARoom3Class;
 class ARoom4Class;
+class AEmptyRoomClass;
 
 // Sets default values
 ALandscapeGenerator::ALandscapeGenerator()
@@ -28,22 +30,29 @@ ALandscapeGenerator::ALandscapeGenerator()
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	bNetLoadOnClient = false;
 }
 
 // Called when the game starts or when spawned
 void ALandscapeGenerator::BeginPlay()
 {
+
+	
+	
 	pathfindingSubsystem = GetWorld()->GetSubsystem<UPathfindingSubsystem>();
+	pathfindingSubsystem->PlaceProceduralNodes(width, height);
+	pathfindingSubsystem->PopulateNodes();
+	
 	Super::BeginPlay();
-	SpawnOutside();
-	PopulateArray();
-	if (DoDebug) { DrawGrid(); }
-	DrawPath();
-	GenerateRooms();
-	SpawnLamps();
+	/*
+	if (GetLocalRole() != ROLE_Authority)
+	{
+		pathfindingSubsystem->RemoveAllNodes();
+		return;
+	}*/
 
-
-	/*for (TActorIterator<APlayerCharacter> It(GetWorld()); It; ++It)
+	
+	for (TActorIterator<APlayerCharacter> It(GetWorld()); It; ++It)
 	{
 		players.Add(*It);
 	}
@@ -51,7 +60,7 @@ void ALandscapeGenerator::BeginPlay()
 	for (APlayerCharacter* player : players)
 	{
 		player->SetActorLocation(StartPoint);
-	}*/
+	}
 
 	for (TActorIterator<AEnemyCharacter> It(GetWorld()); It; ++It)
 	{
@@ -62,6 +71,9 @@ void ALandscapeGenerator::BeginPlay()
 	{
 		enemy->SetActorLocation(EndPoint);
 	}
+
+	//ServerCheckVisibility();
+	GenerateWorld();
 	
 }
 
@@ -75,6 +87,26 @@ void ALandscapeGenerator::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+}
+
+void ALandscapeGenerator::GenerateWorld()
+{
+	SpawnOutside();
+	PopulateArray();
+	if (DoDebug) { DrawGrid(); }
+	DrawPath();
+	GenerateRooms();
+	SpawnLamps();
+}
+
+void ALandscapeGenerator::MulticastCheckVisibility_Implementation()
+{
+	GenerateWorld();
+}
+
+void ALandscapeGenerator::ServerCheckVisibility_Implementation()
+{
+	MulticastCheckVisibility();
 }
 
 void ALandscapeGenerator::SpawnOutside()

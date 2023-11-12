@@ -16,13 +16,16 @@ AEnemyCharacter::AEnemyCharacter()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	bNetLoadOnClient = false;
 	PawnSensingComponent = CreateDefaultSubobject<UPawnSensingComponent>("Pawn Sensing Component");
 }
 
 // Called when the game starts or when spawned
 void AEnemyCharacter::BeginPlay()
 {
+	
 	Super::BeginPlay();
+	if (GetLocalRole() != ROLE_Authority) return;
 
 	PathfindingSubsystem = GetWorld()->GetSubsystem<UPathfindingSubsystem>();
 	if (PathfindingSubsystem)
@@ -192,6 +195,7 @@ void AEnemyCharacter::OnBellHeard(float Volume)
 void AEnemyCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	if (GetLocalRole() != ROLE_Authority) return;
 	
 	UpdateSight();
 	

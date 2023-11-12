@@ -47,6 +47,9 @@ public:
 
 	//void PlaceProceduralNodes(const TArray<FVector>& LandscapeVertexData, int32 MapWidth, int32 MapHeight);
 	void DeleteOtherNodes(TArray<FVector> Path1, TArray<FVector> Path2);
+	void RemoveAllNodes();
+	void PlaceProceduralNodes(int32 MapWidth, int32 MapHeight);
+	void PopulateNodes();
 
 protected:
 
@@ -55,7 +58,7 @@ protected:
 
 private:
 
-	void PopulateNodes();
+	
 	//void RemoveAllNodes();
 	ANavigationNode* GetRandomNode();
 	

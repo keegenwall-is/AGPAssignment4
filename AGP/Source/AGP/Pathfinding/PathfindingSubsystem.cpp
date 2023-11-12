@@ -9,7 +9,7 @@
 
 void UPathfindingSubsystem::OnWorldBeginPlay(UWorld& InWorld)
 {
-	PopulateNodes();
+	//PopulateNodes();
 }
 
 TArray<FVector> UPathfindingSubsystem::GetRandomPath(const FVector& StartLocation)
@@ -109,6 +109,15 @@ ANavigationNode* UPathfindingSubsystem::GetRandomNode()
 	}
 	const int32 RandIndex = FMath::RandRange(0, Nodes.Num()-1);
 	return Nodes[RandIndex];
+}
+
+void UPathfindingSubsystem::RemoveAllNodes()
+{
+	for (int i = 0; i < Nodes.Num()-1; i++)
+	{
+		Nodes[i]->Destroy();
+	}
+	Nodes.Empty();
 }
 
 ANavigationNode* UPathfindingSubsystem::FindNearestNode(const FVector& TargetLocation)
@@ -342,5 +351,52 @@ TArray<FVector> UPathfindingSubsystem::ReconstructPath(const TMap<ANavigationNod
 	}
 
 	return NodeLocations;
+}
+
+void UPathfindingSubsystem::PlaceProceduralNodes(int32 MapWidth, int32 MapHeight)
+{
+	// Need to destroy all of the current nodes in the world.
+	RemoveAllNodes();
+	
+	// Then create and place all the nodes and store them in the ProcedurallyPlacedNodes array.
+	for (int Y = 0; Y < MapHeight; Y++)
+	{
+		for (int X = 0; X < MapWidth; X++)
+		{
+			// Spawn the node in
+			if (ANavigationNode* Node = GetWorld()->SpawnActor<ANavigationNode>())
+			{
+				Node->SetActorLocation(FVector(Y * 950, X * 950, 0));
+				ProcedurallyPlacedNodes.Add(Node);
+			} else
+			{
+				UE_LOG(LogTemp, Error, TEXT("Unable to spawn a node for some reason. This is bad!"))
+			}
+			
+		}
+	}
+	// Then add connections between all adjacent nodes.
+	for (int Y = 0; Y < MapHeight; Y++)
+	{
+		for (int X = 0; X < MapWidth; X++)
+		{
+			if (ANavigationNode* CurrentNode = ProcedurallyPlacedNodes[Y * MapWidth + X]) // Make sure it's a valid ptr.
+			{
+				// ADD CONNECTIONS:
+				// Add Left
+				if (X != MapWidth-1)
+					CurrentNode->ConnectedNodes.Add(ProcedurallyPlacedNodes[Y * MapWidth + X+1]);
+				// Add Up
+				if (Y != MapHeight-1)
+					CurrentNode->ConnectedNodes.Add(ProcedurallyPlacedNodes[(Y+1) * MapWidth + X]);
+				// Add Right
+				if (X != 0)
+					CurrentNode->ConnectedNodes.Add(ProcedurallyPlacedNodes[Y * MapWidth + X-1]);
+				// Add Down
+				if (Y != 0)
+					CurrentNode->ConnectedNodes.Add(ProcedurallyPlacedNodes[(Y-1) * MapWidth + X]);
+			}
+		}
+	}
 }
 

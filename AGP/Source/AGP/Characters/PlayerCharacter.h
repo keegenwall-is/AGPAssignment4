@@ -41,6 +41,7 @@ protected:
 	float LookSensitivity = 0.5f;
 
 	bool bClicked = false;
+
 	
 public:	
 	// Called every frame

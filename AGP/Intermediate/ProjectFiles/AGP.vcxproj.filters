@@ -72,12 +72,6 @@
     <ClInclude Include="..\..\Source\AGP\LandscapeGenerator.h">
       <Filter>Source\AGP</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\AGP\MultiplayerGameMode.cpp">
-      <Filter>Source\AGP</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\AGP\MultiplayerGameMode.h">
-      <Filter>Source\AGP</Filter>
-    </ClInclude>
     <ClCompile Include="..\..\Source\AGP\MultiplayerGameMode2.cpp">
       <Filter>Source\AGP</Filter>
     </ClCompile>

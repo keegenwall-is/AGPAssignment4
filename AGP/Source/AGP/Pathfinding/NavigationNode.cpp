@@ -13,6 +13,8 @@ ANavigationNode::ANavigationNode()
 	LocationComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Location Component"));
 	SetRootComponent(LocationComponent);
 
+	bNetLoadOnClient = false;
+
 }
 
 void ANavigationNode::DeleteAllConnections()
