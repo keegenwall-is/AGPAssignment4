@@ -158,6 +158,9 @@ private:
 
 	void CheckVisibilityImplementation();
 
+	UFUNCTION(Server, Reliable)
+	void ServerCheckVisibility();
+	
 	UFUNCTION(NetMulticast, Reliable)
 	void MulticastCheckVisibility();
 

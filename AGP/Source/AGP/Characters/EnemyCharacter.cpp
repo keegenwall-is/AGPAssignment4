@@ -114,7 +114,7 @@ void AEnemyCharacter::TickEvade()
 
 void AEnemyCharacter::TickInvestigate()
 {
-	//CheckVisibility();
+	CheckVisibility();
 	if (CurrentPath.IsEmpty())
 	{
 		CurrentPath = PathfindingSubsystem->GetPath(GetActorLocation(), Lamp->GetActorLocation());
@@ -124,7 +124,7 @@ void AEnemyCharacter::TickInvestigate()
 
 void AEnemyCharacter::TickGuard()
 {
-	//CheckVisibility();
+	CheckVisibility();
 	if (CurrentPath.IsEmpty() && bFromSecond == false && bFromThird == false)
 	{
 		CurrentPath = PathfindingSubsystem->GetGuardLoopSecond(Lamp->GetActorLocation());
@@ -169,11 +169,7 @@ void AEnemyCharacter::UpdateSight()
 
 void AEnemyCharacter::CheckVisibility()
 {
-	//if (GetLocalRole() == ROLE_AutonomousProxy)
-	//{
-		CheckVisibilityImplementation();
-		MulticastCheckVisibility_Implementation();
-	//}
+	ServerCheckVisibility();
 }
 
 void AEnemyCharacter::OnBellHeard(float Volume)
@@ -287,7 +283,7 @@ void AEnemyCharacter::CheckVisibilityImplementation()
 	{
 		Players.Add(*It);
 	}
-
+	GetMesh()->SetVisibility(false);
 	for (APlayerCharacter* Player : Players)
 	{
 		if (Player)
@@ -296,13 +292,16 @@ void AEnemyCharacter::CheckVisibilityImplementation()
 			if (Distance < 200.0f)
 			{
 				// If the player is within the visibility range, don't hide the AI
-				this->SetActorHiddenInGame(false);
-			} else
-			{
-				this->SetActorHiddenInGame(true);
+				GetMesh()->SetVisibility(true);
+				//UE_LOG(LogTemp, Error, TEXT("dont be invisible"))
 			}
 		}
 	}
+}
+
+void AEnemyCharacter::ServerCheckVisibility_Implementation()
+{
+	MulticastCheckVisibility();
 }
 
 void AEnemyCharacter::MulticastCheckVisibility_Implementation()

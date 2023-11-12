@@ -23,6 +23,13 @@ void EmptyLinkFunctionForGeneratedCodeBaseCharacter() {}
 		P_THIS->MulticastFire_Implementation();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(ABaseCharacter::execServerFire)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->ServerFire_Implementation();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(ABaseCharacter::execMulticastEquipWeapon)
 	{
 		P_GET_UBOOL(Z_Param_bEquipWeapon);
@@ -76,6 +83,11 @@ void EmptyLinkFunctionForGeneratedCodeBaseCharacter() {}
 	{
 		ProcessEvent(FindFunctionChecked(NAME_ABaseCharacter_MulticastFire),NULL);
 	}
+	static FName NAME_ABaseCharacter_ServerFire = FName(TEXT("ServerFire"));
+	void ABaseCharacter::ServerFire()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_ABaseCharacter_ServerFire),NULL);
+	}
 	void ABaseCharacter::StaticRegisterNativesABaseCharacter()
 	{
 		UClass* Class = ABaseCharacter::StaticClass();
@@ -83,6 +95,7 @@ void EmptyLinkFunctionForGeneratedCodeBaseCharacter() {}
 			{ "HasWeapon", &ABaseCharacter::execHasWeapon },
 			{ "MulticastEquipWeapon", &ABaseCharacter::execMulticastEquipWeapon },
 			{ "MulticastFire", &ABaseCharacter::execMulticastFire },
+			{ "ServerFire", &ABaseCharacter::execServerFire },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -244,6 +257,28 @@ void EmptyLinkFunctionForGeneratedCodeBaseCharacter() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_ABaseCharacter_ServerFire_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABaseCharacter_ServerFire_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Characters/BaseCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_ABaseCharacter_ServerFire_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABaseCharacter, nullptr, "ServerFire", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00240CC1, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABaseCharacter_ServerFire_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ABaseCharacter_ServerFire_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABaseCharacter_ServerFire()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_ABaseCharacter_ServerFire_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(ABaseCharacter);
 	UClass* Z_Construct_UClass_ABaseCharacter_NoRegister()
 	{
@@ -278,6 +313,7 @@ void EmptyLinkFunctionForGeneratedCodeBaseCharacter() {}
 		{ &Z_Construct_UFunction_ABaseCharacter_HasWeapon, "HasWeapon" }, // 4237297528
 		{ &Z_Construct_UFunction_ABaseCharacter_MulticastEquipWeapon, "MulticastEquipWeapon" }, // 786716208
 		{ &Z_Construct_UFunction_ABaseCharacter_MulticastFire, "MulticastFire" }, // 4282318546
+		{ &Z_Construct_UFunction_ABaseCharacter_ServerFire, "ServerFire" }, // 2206062748
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseCharacter_Statics::Class_MetaDataParams[] = {
@@ -340,15 +376,15 @@ void EmptyLinkFunctionForGeneratedCodeBaseCharacter() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ABaseCharacter);
 	ABaseCharacter::~ABaseCharacter() {}
-	struct Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_BaseCharacter_h_Statics
+	struct Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_BaseCharacter_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_BaseCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_ABaseCharacter, ABaseCharacter::StaticClass, TEXT("ABaseCharacter"), &Z_Registration_Info_UClass_ABaseCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseCharacter), 3079534356U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_BaseCharacter_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_ABaseCharacter, ABaseCharacter::StaticClass, TEXT("ABaseCharacter"), &Z_Registration_Info_UClass_ABaseCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(ABaseCharacter), 2456590002U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_BaseCharacter_h_813493101(TEXT("/Script/AGP"),
-		Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_BaseCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_BaseCharacter_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_BaseCharacter_h_3524283329(TEXT("/Script/AGP"),
+		Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_BaseCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_BaseCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -33,11 +33,15 @@ protected:
 	UPROPERTY(EditDefaultsOnly)
 	UInputAction* FireAction;
 	UPROPERTY(EditDefaultsOnly)
+	UInputAction* ReleaseFire;
+	UPROPERTY(EditDefaultsOnly)
 	UInputMappingContext* InputMappingContext;
 
 	UPROPERTY(EditDefaultsOnly)
 	float LookSensitivity = 0.5f;
 
+	bool bClicked = false;
+	
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -50,5 +54,6 @@ private:
 	void Move(const FInputActionValue& Value);
 	void Look(const FInputActionValue& Value);
 	void FireWeapon(const FInputActionValue& Value);
+	void ReleaseWeaponFire(const FInputActionValue& Value);
 
 };

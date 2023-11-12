@@ -5,6 +5,13 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/Blueprints/BP_Multiplayer.uasset",
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/Blueprints/BP_Multiplayer2.uasset",
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/Blueprints/BP_PlayerCharacter.uasset",
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/Blueprints/BP_EnemyCharacter.uasset",
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/Levels/ShooterMap.umap",
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/Inputs/ReleaseFire.uasset",
+				"C:/Users/keege/OneDrive/Documents/AGPAssignment4/AGPAssignment4/AGP/Content/Inputs/CharacterInputMapping.uasset",
 				"D:/GitHub/AGPAssignment4/AGP/Content/Levels/ProceduralLevelMap.umap",
 				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/BP_PCGGameInstance.uasset",
 				"D:/GitHub/AGPAssignment4/AGP/Content/Blueprints/Room1_Blueprint1.uasset",

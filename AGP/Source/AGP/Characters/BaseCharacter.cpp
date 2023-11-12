@@ -25,19 +25,15 @@ void ABaseCharacter::BeginPlay()
 
 void ABaseCharacter::Fire()
 {
-	FireImplementation();
-	MulticastFire_Implementation();
+	//FireImplementation();
+	ServerFire();
 }
 
 // Called every frame
 void ABaseCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
-	if (bHasWeaponEquipped)
-	{
-		TimeSinceLastShot += DeltaTime;
-	}
+	
 }
 
 bool ABaseCharacter::HasWeapon()
@@ -52,12 +48,9 @@ bool ABaseCharacter::GetIsFiring()
 
 void ABaseCharacter::EquipWeapon(bool bEquipWeapon)
 {
-
-	//if (GetLocalRole() == ROLE_Authority)
-	//{
-		EquipWeaponImplementation(bEquipWeapon);
-		MulticastEquipWeapon_Implementation(bEquipWeapon);
-	//}
+	
+	EquipWeaponImplementation(bEquipWeapon);
+	MulticastEquipWeapon(bEquipWeapon);
 	
 }
 
@@ -70,28 +63,23 @@ void ABaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 void ABaseCharacter::EquipWeaponImplementation(bool bEquipWeapon)
 {
-
 	bHasWeaponEquipped = bEquipWeapon;
 	EquipWeaponGraphical(bEquipWeapon);
-	if (bEquipWeapon)
-	{
-		UE_LOG(LogTemp, Display, TEXT("Player has equipped weapon."))
-	}
-	else
-	{
-		UE_LOG(LogTemp, Display, TEXT("Player has unequipped weapon."))
-	}
-	
 }
 
 void ABaseCharacter::FireImplementation()
 {
-	if (HasWeapon())
-	{
+	//if (HasWeapon())
+	//{
 		bIsFiring = !bIsFiring;
-		UE_LOG(LogTemp, Display, TEXT("Player is shooting weapon. bIsFiring = %s"), bIsFiring ? TEXT("true") : TEXT("false"));
+		//UE_LOG(LogTemp, Display, TEXT("Player is shooting weapon. bIsFiring = %s"), bIsFiring ? TEXT("true") : TEXT("false"));
 		FiringGraphical(bIsFiring);
-	}
+	//}
+}
+
+void ABaseCharacter::ServerFire_Implementation()
+{
+	MulticastFire();
 }
 
 void ABaseCharacter::MulticastFire_Implementation()

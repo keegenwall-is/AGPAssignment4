@@ -18,6 +18,9 @@
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
     </None>
+    <None Include="..\..\Config\DefaultEditorSettings.ini">
+      <Filter>Config</Filter>
+    </None>
     <None Include="..\..\Config\DefaultEngine.ini">
       <Filter>Config</Filter>
     </None>
@@ -57,10 +60,34 @@
     <ClInclude Include="..\..\Source\AGP\AGPGameModeBase.h">
       <Filter>Source\AGP</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\AGP\EmptyRoomClass.cpp">
+      <Filter>Source\AGP</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\AGP\EmptyRoomClass.h">
+      <Filter>Source\AGP</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\AGP\LandscapeGenerator.cpp">
+      <Filter>Source\AGP</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\AGP\LandscapeGenerator.h">
+      <Filter>Source\AGP</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\AGP\MultiplayerGameMode.cpp">
       <Filter>Source\AGP</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\AGP\MultiplayerGameMode.h">
+      <Filter>Source\AGP</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\AGP\MultiplayerGameMode2.cpp">
+      <Filter>Source\AGP</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\AGP\MultiplayerGameMode2.h">
+      <Filter>Source\AGP</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\AGP\PCGGameInstance.cpp">
+      <Filter>Source\AGP</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\AGP\PCGGameInstance.h">
       <Filter>Source\AGP</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\AGP\PickupBounceComponent.cpp">
@@ -79,6 +106,48 @@
       <Filter>Source\AGP</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\AGP\RingListener.h">
+      <Filter>Source\AGP</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\AGP\Room1Class.cpp">
+      <Filter>Source\AGP</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\AGP\Room1Class.h">
+      <Filter>Source\AGP</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\AGP\Room2Class.cpp">
+      <Filter>Source\AGP</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\AGP\Room2Class.h">
+      <Filter>Source\AGP</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\AGP\Room3Class.cpp">
+      <Filter>Source\AGP</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\AGP\Room3Class.h">
+      <Filter>Source\AGP</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\AGP\Room4Class.cpp">
+      <Filter>Source\AGP</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\AGP\Room4Class.h">
+      <Filter>Source\AGP</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\AGP\Room5Class.cpp">
+      <Filter>Source\AGP</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\AGP\Room5Class.h">
+      <Filter>Source\AGP</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\AGP\TableChairClass.cpp">
+      <Filter>Source\AGP</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\AGP\TableChairClass.h">
+      <Filter>Source\AGP</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\AGP\TableClass.cpp">
+      <Filter>Source\AGP</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\AGP\TableClass.h">
       <Filter>Source\AGP</Filter>
     </ClInclude>
     <Filter Include="Source\AGP\Characters">

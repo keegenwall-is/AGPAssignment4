@@ -17,13 +17,13 @@ void EmptyLinkFunctionForGeneratedCodeAGP_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x3663B2D9,
-				0x78CF10CA,
+				0x226A7CAD,
+				0x4723B5B7,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_AGP.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_AGP.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_AGP(Z_Construct_UPackage__Script_AGP, TEXT("/Script/AGP"), Z_Registration_Info_UPackage__Script_AGP, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x3663B2D9, 0x78CF10CA));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_AGP(Z_Construct_UPackage__Script_AGP, TEXT("/Script/AGP"), Z_Registration_Info_UPackage__Script_AGP, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x226A7CAD, 0x4723B5B7));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

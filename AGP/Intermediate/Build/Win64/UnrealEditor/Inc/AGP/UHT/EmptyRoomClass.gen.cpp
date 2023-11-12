@@ -73,15 +73,15 @@ void EmptyLinkFunctionForGeneratedCodeEmptyRoomClass() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AEmptyRoomClass);
 	AEmptyRoomClass::~AEmptyRoomClass() {}
-	struct Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_EmptyRoomClass_h_Statics
+	struct Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_EmptyRoomClass_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_EmptyRoomClass_h_Statics::ClassInfo[] = {
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_EmptyRoomClass_h_Statics::ClassInfo[] = {
 		{ Z_Construct_UClass_AEmptyRoomClass, AEmptyRoomClass::StaticClass, TEXT("AEmptyRoomClass"), &Z_Registration_Info_UClass_AEmptyRoomClass, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEmptyRoomClass), 3270401689U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_EmptyRoomClass_h_1579019932(TEXT("/Script/AGP"),
-		Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_EmptyRoomClass_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_EmptyRoomClass_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_EmptyRoomClass_h_1579019932(TEXT("/Script/AGP"),
+		Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_EmptyRoomClass_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_EmptyRoomClass_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

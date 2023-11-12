@@ -90,6 +90,13 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacter() {}
 		P_THIS->MulticastCheckVisibility_Implementation();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(AEnemyCharacter::execServerCheckVisibility)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->ServerCheckVisibility_Implementation();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AEnemyCharacter::execOnSensedPawn)
 	{
 		P_GET_OBJECT(APawn,Z_Param_SensedActor);
@@ -103,12 +110,18 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacter() {}
 	{
 		ProcessEvent(FindFunctionChecked(NAME_AEnemyCharacter_MulticastCheckVisibility),NULL);
 	}
+	static FName NAME_AEnemyCharacter_ServerCheckVisibility = FName(TEXT("ServerCheckVisibility"));
+	void AEnemyCharacter::ServerCheckVisibility()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_AEnemyCharacter_ServerCheckVisibility),NULL);
+	}
 	void AEnemyCharacter::StaticRegisterNativesAEnemyCharacter()
 	{
 		UClass* Class = AEnemyCharacter::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "MulticastCheckVisibility", &AEnemyCharacter::execMulticastCheckVisibility },
 			{ "OnSensedPawn", &AEnemyCharacter::execOnSensedPawn },
+			{ "ServerCheckVisibility", &AEnemyCharacter::execServerCheckVisibility },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -168,6 +181,28 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacter() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_AEnemyCharacter_ServerCheckVisibility_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AEnemyCharacter_ServerCheckVisibility_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Characters/EnemyCharacter.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_AEnemyCharacter_ServerCheckVisibility_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEnemyCharacter, nullptr, "ServerCheckVisibility", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00240CC1, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AEnemyCharacter_ServerCheckVisibility_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AEnemyCharacter_ServerCheckVisibility_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AEnemyCharacter_ServerCheckVisibility()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_AEnemyCharacter_ServerCheckVisibility_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(AEnemyCharacter);
 	UClass* Z_Construct_UClass_AEnemyCharacter_NoRegister()
 	{
@@ -222,6 +257,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacter() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_AEnemyCharacter_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AEnemyCharacter_MulticastCheckVisibility, "MulticastCheckVisibility" }, // 2649339684
 		{ &Z_Construct_UFunction_AEnemyCharacter_OnSensedPawn, "OnSensedPawn" }, // 2033150074
+		{ &Z_Construct_UFunction_AEnemyCharacter_ServerCheckVisibility, "ServerCheckVisibility" }, // 1468545808
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemyCharacter_Statics::Class_MetaDataParams[] = {
@@ -340,19 +376,19 @@ void EmptyLinkFunctionForGeneratedCodeEnemyCharacter() {}
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AEnemyCharacter);
 	AEnemyCharacter::~AEnemyCharacter() {}
-	struct Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics
+	struct Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics
 	{
 		static const FEnumRegisterCompiledInInfo EnumInfo[];
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::EnumInfo[] = {
+	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::EnumInfo[] = {
 		{ EEnemyState_StaticEnum, TEXT("EEnemyState"), &Z_Registration_Info_UEnum_EEnemyState, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 328182112U) },
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_AEnemyCharacter, AEnemyCharacter::StaticClass, TEXT("AEnemyCharacter"), &Z_Registration_Info_UClass_AEnemyCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyCharacter), 3676878586U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_AEnemyCharacter, AEnemyCharacter::StaticClass, TEXT("AEnemyCharacter"), &Z_Registration_Info_UClass_AEnemyCharacter, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AEnemyCharacter), 3449287650U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_1245807914(TEXT("/Script/AGP"),
-		Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_323077590(TEXT("/Script/AGP"),
+		Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::ClassInfo),
 		nullptr, 0,
-		Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_GitHub_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::EnumInfo));
+		Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_keege_OneDrive_Documents_AGPAssignment4_AGPAssignment4_AGP_Source_AGP_Characters_EnemyCharacter_h_Statics::EnumInfo));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

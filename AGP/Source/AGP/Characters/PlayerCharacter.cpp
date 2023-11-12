@@ -47,6 +47,7 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 		Input->BindAction(LookAction, ETriggerEvent::Triggered, this, &APlayerCharacter::Look);
 		Input->BindAction(JumpAction, ETriggerEvent::Triggered, this, &ACharacter::Jump);
 		Input->BindAction(FireAction, ETriggerEvent::Triggered, this, &APlayerCharacter::FireWeapon);
+		Input->BindAction(ReleaseFire, ETriggerEvent::Triggered, this, &APlayerCharacter::ReleaseWeaponFire);
 	}
 }
 
@@ -71,12 +72,16 @@ void APlayerCharacter::FireWeapon(const FInputActionValue& Value)
 	FVector CameraPosition;
 	FRotator CameraRotation;
 	GetWorld()->GetFirstPlayerController()->GetPlayerViewPoint(CameraPosition, CameraRotation);
-	const FVector CameraForward = UKismetMathLibrary::GetForwardVector(CameraRotation);
+	//const FVector CameraForward = UKismetMathLibrary::GetForwardVector(CameraRotation);
+	//UE_LOG(LogTemp, Error, TEXT("Clicked"))
 	Fire();
-	
-	/*if (BulletStartPosition)
-	{
-		Fire(BulletStartPosition->GetComponentLocation() + 10000.0f * CameraForward);
-	}*/
+
+}
+
+void APlayerCharacter::ReleaseWeaponFire(const FInputActionValue& Value)
+{
+	//bClicked = false;
+	Fire();
+	//UE_LOG(LogTemp, Error, TEXT("Released"))
 }
 
