@@ -10,10 +10,12 @@ ANavigationNode::ANavigationNode()
 	PrimaryActorTick.bCanEverTick = true;
 	PrimaryActorTick.bStartWithTickEnabled = true;
 
+	bNetLoadOnClient = false;
+	
 	LocationComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Location Component"));
 	SetRootComponent(LocationComponent);
 
-	bNetLoadOnClient = false;
+	
 
 }
 
@@ -65,8 +67,5 @@ void ANavigationNode::Tick(float DeltaTime)
 	}
 }
 
-bool ANavigationNode::ShouldTickIfViewportsOnly() const
-{
-	return true;
-}
+
 

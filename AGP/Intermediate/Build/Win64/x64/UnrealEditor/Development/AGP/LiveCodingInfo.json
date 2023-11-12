@@ -2,15 +2,19 @@
 	"RemapUnityFiles": 
 	{
 		"Module.AGP.cpp.obj": [
+			"AGP.init.gen.cpp.obj",
 			"AGPGameModeBase.gen.cpp.obj",
 			"BaseCharacter.gen.cpp.obj",
+			"CharacterSpawner.gen.cpp.obj",
 			"EmptyRoomClass.gen.cpp.obj",
 			"EnemyCharacter.gen.cpp.obj",
 			"HealthComponent.gen.cpp.obj",
 			"LampPickup.gen.cpp.obj",
+			"LandscapeGenerator.gen.cpp.obj",
 			"MultiplayerGameMode2.gen.cpp.obj",
 			"NavigationNode.gen.cpp.obj",
 			"PathfindingSubsystem.gen.cpp.obj",
+			"PCGGameInstance.gen.cpp.obj",
 			"PickupBase.gen.cpp.obj",
 			"PickupBounceComponent.gen.cpp.obj",
 			"PickupRotatorComponent.gen.cpp.obj",
@@ -26,12 +30,14 @@
 			"WeaponPickup.gen.cpp.obj",
 			"AGP.cpp.obj",
 			"AGPGameModeBase.cpp.obj",
+			"CharacterSpawner.cpp.obj",
 			"BaseCharacter.cpp.obj",
 			"HealthComponent.cpp.obj",
 			"PlayerCharacter.cpp.obj",
 			"EmptyRoomClass.cpp.obj",
 			"MultiplayerGameMode2.cpp.obj",
-			"NavigationNode.cpp.obj",
+			"PathfindingSubsystem.cpp.obj",
+			"PCGGameInstance.cpp.obj",
 			"PickupBounceComponent.cpp.obj",
 			"PickupRotatorComponent.cpp.obj",
 			"LampPickup.cpp.obj",
@@ -45,15 +51,9 @@
 			"Room5Class.cpp.obj",
 			"TableChairClass.cpp.obj",
 			"TableClass.cpp.obj",
-			"AGP.init.gen.cpp.obj",
-			"CharacterSpawner.gen.cpp.obj",
-			"LandscapeGenerator.gen.cpp.obj",
-			"PCGGameInstance.gen.cpp.obj",
-			"CharacterSpawner.cpp.obj",
 			"EnemyCharacter.cpp.obj",
 			"LandscapeGenerator.cpp.obj",
-			"PathfindingSubsystem.cpp.obj",
-			"PCGGameInstance.cpp.obj"
+			"NavigationNode.cpp.obj"
 		]
 	}
 }

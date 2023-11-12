@@ -10,62 +10,36 @@
     <list default="true" id="55008baf-56df-4514-83b6-157834e1add6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AGP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AGP/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor.modules" beforeDir="false" afterPath="$PROJECT_DIR$/Binaries/Win64/UnrealEditor.modules" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_Multiplayer2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_Multiplayer2.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_PCGGameInstance.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_PCGGameInstance.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/BP_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/BP_PlayerCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Levels/ProceduralLevelMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Levels/ProceduralLevelMap.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/SourceFileCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/SourceFileCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/AGPEditor/Development/AGPEditor.uhtmanifest" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/AGPEditor/Development/AGPEditor.uhtmanifest" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/ActionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/ActionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/AGP/UHT/AGP.init.gen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/AGP/UHT/AGP.init.gen.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/AGP/UHT/LandscapeGenerator.gen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/AGP/UHT/LandscapeGenerator.gen.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/AGP/UHT/LandscapeGenerator.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/AGP/UHT/LandscapeGenerator.generated.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/AGP/UHT/PCGGameInstance.gen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/AGP/UHT/PCGGameInstance.gen.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/AGP/UHT/PCGGameInstance.generated.h" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/AGP/UHT/PCGGameInstance.generated.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/AGP/UHT/Timestamp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/UnrealEditor/Inc/AGP/UHT/Timestamp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/AGPEditor/Development/DependencyCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/AGPEditor/Development/DependencyCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/AGPEditor/Development/HotReload.state" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/AGPEditor/Development/HotReload.state" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/AGPEditor/Development/Makefile.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/AGPEditor/Development/Makefile.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/AGPEditor/Development/Metadata-HotReload.dat" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/AGPEditor/Development/Metadata-HotReload.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/ActionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/ActionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/LandscapeGenerator.cpp.dep.json" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/LandscapeGenerator.cpp.dep.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/LandscapeGenerator.gen.cpp.dep.json" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/LandscapeGenerator.gen.cpp.dep.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/LiveCodingInfo.json" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/LiveCodingInfo.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/Module.AGP.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/Module.AGP.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/Module.AGP.cpp.dep.json" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/Module.AGP.cpp.dep.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/Module.AGP.cpp.old" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/Module.AGP.cpp.old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/PCGGameInstance.gen.cpp.dep.json" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/PCGGameInstance.gen.cpp.dep.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/UnrealEditor-AGP-9298.dll.response" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/UnrealEditor-AGP-9298.dll.response" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/UnrealEditor-AGP-9298.lib.response" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/UnrealEditor-AGP-9298.lib.response" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/UnrealEditor-AGP-2574.dll.response" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/UnrealEditor-AGP-2574.dll.response" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/UnrealEditor-AGP-2574.lib.response" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/UnrealEditor-AGP-2574.lib.response" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/UnrealEditor-AGP.dll.response" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/UnrealEditor-AGP.dll.response" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/UnrealEditor-AGP.dll.response.old" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/UnrealEditor-AGP.dll.response.old" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/UnrealEditor-AGP.lib.response" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/UnrealEditor-AGP.lib.response" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/UnrealEditor-AGP.lib.response.old" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/Build/Win64/x64/UnrealEditor/Development/AGP/UnrealEditor-AGP.lib.response.old" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/CachedAssetRegistry.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/CachedAssetRegistry.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/ProjectFiles/AGP.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/ProjectFiles/AGP.vcxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Intermediate/ProjectFiles/AGP.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/ProjectFiles/AGP.vcxproj.filters" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saved/Autosaves/Game/Levels/ProceduralLevelMap_Auto1.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/Autosaves/Game/Levels/ProceduralLevelMap_Auto1.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/Config/WindowsEditor/EditorPerProjectUserSettings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/Config/WindowsEditor/EditorPerProjectUserSettings.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/Config/WindowsEditor/Engine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/Config/WindowsEditor/Engine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saved/Logs/AGP-backup-2023.11.12-08.00.43.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saved/Logs/AGP-backup-2023.11.12-08.04.32.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saved/Logs/AGP-backup-2023.11.12-08.05.06.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saved/Logs/AGP-backup-2023.11.12-08.05.51.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saved/Logs/AGP-backup-2023.11.12-08.07.47.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saved/Logs/AGP-backup-2023.11.12-08.18.14.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saved/Logs/AGP-backup-2023.11.12-08.57.35.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saved/Logs/AGP-backup-2023.11.12-09.12.25.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saved/Logs/AGP-backup-2023.11.12-09.45.00.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saved/Logs/AGP-backup-2023.11.12-09.46.51.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/Logs/AGP-backup-2023.11.12-12.09.17.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/Logs/AGP-backup-2023.11.12-12.12.52.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/Logs/AGP.log" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/Logs/AGP.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saved/SourceControl/UncontrolledChangelists.json" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/SourceControl/UncontrolledChangelists.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/AGP/Characters/EnemyCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/AGP/Characters/EnemyCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/AGP/Characters/EnemyCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/AGP/Characters/EnemyCharacter.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/AGP/LandscapeGenerator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/AGP/LandscapeGenerator.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/AGP/LandscapeGenerator.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/AGP/LandscapeGenerator.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/AGP/PCGGameInstance.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/AGP/PCGGameInstance.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/AGP/PCGGameInstance.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/AGP/PCGGameInstance.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/AGP/Pathfinding/PathfindingSubsystem.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/AGP/Pathfinding/PathfindingSubsystem.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/AGP/Pathfinding/NavigationNode.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/AGP/Pathfinding/NavigationNode.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/AGP/Pathfinding/NavigationNode.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/AGP/Pathfinding/NavigationNode.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +162,7 @@
       <workItem from="1699749909469" duration="595000" />
       <workItem from="1699752017863" duration="10107000" />
       <workItem from="1699776084408" duration="3345000" />
-      <workItem from="1699779492671" duration="13022000" />
+      <workItem from="1699779492671" duration="13439000" />
     </task>
     <servers />
   </component>

@@ -38,7 +38,7 @@ ALandscapeGenerator::ALandscapeGenerator()
 // Called when the game starts or when spawned
 void ALandscapeGenerator::BeginPlay()
 {
-	Super::BeginPlay();
+	
 
 	if (GetLocalRole() == ROLE_Authority)
 	{    
@@ -57,12 +57,10 @@ void ALandscapeGenerator::BeginPlay()
 		GenerateRooms();
 		SpawnPickups();
 	}
+	Super::BeginPlay();
 }
 
-bool ALandscapeGenerator::ShouldTickIfViewportsOnly() const
-{
-	return true;
-}
+
 
 // Called every frame
 void ALandscapeGenerator::Tick(float DeltaTime)

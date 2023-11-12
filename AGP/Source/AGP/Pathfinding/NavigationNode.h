@@ -17,7 +17,7 @@ public:
 	// Sets default values for this actor's properties
 	ANavigationNode();
 
-	virtual bool ShouldTickIfViewportsOnly() const override;
+
 	float GScore;
 	float HScore;
 	ANavigationNode* CameFrom;

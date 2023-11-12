@@ -23,9 +23,9 @@ AEnemyCharacter::AEnemyCharacter()
 // Called when the game starts or when spawned
 void AEnemyCharacter::BeginPlay()
 {
-	if (GetLocalRole() != ROLE_Authority) return;
-	Super::BeginPlay();
 	
+	Super::BeginPlay();
+	if (GetLocalRole() != ROLE_Authority) return;
 
 	PathfindingSubsystem = GetWorld()->GetSubsystem<UPathfindingSubsystem>();
 	if (PathfindingSubsystem)
@@ -41,7 +41,7 @@ void AEnemyCharacter::BeginPlay()
 	}
 	if (GetLocalRole() == ROLE_Authority) {
 		FTimerHandle TimerHandle = FTimerHandle();
-		GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AEnemyCharacter::CanTick, 1.0f);
+		GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AEnemyCharacter::CanTick, 5.0f);
 	}
 	
 }
@@ -221,16 +221,14 @@ void AEnemyCharacter::OnBellHeard(float Volume)
 // Called every frame
 void AEnemyCharacter::Tick(float DeltaTime)
 {
+	if (!canTick)
+	{
+		return;
+	}
+	
+	Super::Tick(DeltaTime);
 	if (GetLocalRole() == ROLE_Authority)
 	{
-		if (!canTick)
-		{
-			return;
-		}
-	
-		Super::Tick(DeltaTime);
-		if (GetLocalRole() != ROLE_Authority) return;
-	
 		UpdateSight();
 	
 		switch(CurrentState)

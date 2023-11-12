@@ -63,7 +63,7 @@ protected:
 	TArray<FVector> Outsides;
 	
 
-	virtual bool ShouldTickIfViewportsOnly() const override;
+
 
 	UPROPERTY(EditAnywhere)
 	bool DoDebug = true;
