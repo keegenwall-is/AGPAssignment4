@@ -82,9 +82,10 @@ protected:
 	 */
 	void UpdateSight();
 
+	
 	void CheckVisibility();
 
-
+	
 	
 	//UFUNCTION(BlueprintImplementableEvent)
 	
@@ -155,6 +156,9 @@ private:
 	
 	APlayerCharacter* FindPlayer() const;
 
-	
+	void CheckVisibilityImplementation();
+
+	UFUNCTION(NetMulticast, Reliable)
+	void MulticastCheckVisibility();
 
 };
