@@ -32,6 +32,7 @@
 			"AGPGameModeBase.cpp.obj",
 			"CharacterSpawner.cpp.obj",
 			"BaseCharacter.cpp.obj",
+			"EnemyCharacter.cpp.obj",
 			"HealthComponent.cpp.obj",
 			"PlayerCharacter.cpp.obj",
 			"EmptyRoomClass.cpp.obj",
@@ -40,7 +41,6 @@
 			"PCGGameInstance.cpp.obj",
 			"PickupBounceComponent.cpp.obj",
 			"PickupRotatorComponent.cpp.obj",
-			"LampPickup.cpp.obj",
 			"PickupBase.cpp.obj",
 			"WeaponPickup.cpp.obj",
 			"RingListener.cpp.obj",
@@ -51,9 +51,9 @@
 			"Room5Class.cpp.obj",
 			"TableChairClass.cpp.obj",
 			"TableClass.cpp.obj",
-			"EnemyCharacter.cpp.obj",
 			"LandscapeGenerator.cpp.obj",
-			"NavigationNode.cpp.obj"
+			"NavigationNode.cpp.obj",
+			"LampPickup.cpp.obj"
 		]
 	}
 }

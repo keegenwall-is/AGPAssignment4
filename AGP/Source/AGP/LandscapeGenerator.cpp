@@ -272,8 +272,8 @@ void ALandscapeGenerator::SpawnPickups()
 	int i = UKismetMathLibrary::RandomInteger(Path1.Num());
 	int j = UKismetMathLibrary::RandomInteger(Path2.Num());
 	
-	GetWorld()->SpawnActor<ALampPickup>(GameInstance->GetLampPickupClass(), FVector(Path1[i].X+300, Path1[i].Y+300, Path1[i].Z), FRotator(0, 45, 0));
-	GetWorld()->SpawnActor<ALampPickup>(GameInstance->GetLampPickupClass(), FVector(Path2[j].X+300, Path2[j].Y+300, Path2[j].Z), FRotator(0, 45, 0));
+	GetWorld()->SpawnActor<ALampPickup>(GameInstance->GetLampPickupClass(), FVector(Path1[i].X+300, Path1[i].Y+300, Path1[i].Z+25), FRotator(0, -45, 0));
+	GetWorld()->SpawnActor<ALampPickup>(GameInstance->GetLampPickupClass(), FVector(Path2[j].X+300, Path2[j].Y+300, Path2[j].Z+25), FRotator(0, -45, 0));
 
 	TArray<int32> positions;
 	for (int k = 0; k < 3; k++)

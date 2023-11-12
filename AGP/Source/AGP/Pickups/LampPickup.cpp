@@ -44,6 +44,6 @@ void ALampPickup::OnPickupOverlap(UPrimitiveComponent* OverlappedComponent, AAct
 void ALampPickup::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	DrawDebugSphere(GetWorld(), GetActorLocation(), 360.0f, 32, FColor::Red, false, -1.0f, 0, 2.0f);
-	DrawDebugSphere(GetWorld(), GetActorLocation(), 1200.0f, 32, FColor::Green, false, -1.0f, 0, 2.0f);
+	//DrawDebugSphere(GetWorld(), GetActorLocation(), 360.0f, 32, FColor::Red, false, -1.0f, 0, 2.0f);
+	//DrawDebugSphere(GetWorld(), GetActorLocation(), 1200.0f, 32, FColor::Green, false, -1.0f, 0, 2.0f);
 }

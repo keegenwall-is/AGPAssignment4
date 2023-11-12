@@ -66,7 +66,7 @@ protected:
 
 
 	UPROPERTY(EditAnywhere)
-	bool DoDebug = true;
+	bool DoDebug = false;
 	
 	int height = 10;
 	int width = 6;
