@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "CharacterSpawner.h"
 #include "Room1Class.h"
 #include "Room2Class.h"
 #include "Room3Class.h"
@@ -10,6 +11,7 @@
 #include "GameFramework/Actor.h"
 #include "Characters/PlayerCharacter.h"
 #include "Characters/EnemyCharacter.h"
+#include "GameFramework/PlayerStart.h"
 #include "LandscapeGenerator.generated.h"
 
 
@@ -43,7 +45,8 @@ protected:
 	void DrawGrid();
 	void DrawPath();
 	void GenerateRooms();
-	void SpawnLamps();
+	void SpawnPickups();
+	void SpawnWeapons();
 	void GenerateWorld();
 	void SpawnPathRooms(FVector p);
 	void GenerateNodes();
@@ -81,16 +84,14 @@ protected:
 
 	UPROPERTY()
 	UPathfindingSubsystem* pathfindingSubsystem;
+	UPROPERTY()
+	ACharacterSpawner* CharacterSpawner;
 
 	UPROPERTY(EditAnywhere)
 	TArray<APlayerCharacter*> players;
 	TArray<AEnemyCharacter*> enemies;
 
-	UFUNCTION(Server, Reliable)
-	void ServerCheckVisibility();
 	
-	UFUNCTION(NetMulticast, Reliable)
-	void MulticastCheckVisibility();
 
 
 public:

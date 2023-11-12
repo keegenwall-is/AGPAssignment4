@@ -60,6 +60,12 @@
     <ClInclude Include="..\..\Source\AGP\AGPGameModeBase.h">
       <Filter>Source\AGP</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\AGP\CharacterSpawner.cpp">
+      <Filter>Source\AGP</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\AGP\CharacterSpawner.h">
+      <Filter>Source\AGP</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\AGP\EmptyRoomClass.cpp">
       <Filter>Source\AGP</Filter>
     </ClCompile>

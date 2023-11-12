@@ -14,26 +14,11 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AGP_LandscapeGenerator_generated_h
 
-#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_SPARSE_DATA
-#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_RPC_WRAPPERS \
-	virtual void MulticastCheckVisibility_Implementation(); \
-	virtual void ServerCheckVisibility_Implementation(); \
- \
-	DECLARE_FUNCTION(execMulticastCheckVisibility); \
-	DECLARE_FUNCTION(execServerCheckVisibility);
-
-
-#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_RPC_WRAPPERS_NO_PURE_DECLS \
-	virtual void MulticastCheckVisibility_Implementation(); \
-	virtual void ServerCheckVisibility_Implementation(); \
- \
-	DECLARE_FUNCTION(execMulticastCheckVisibility); \
-	DECLARE_FUNCTION(execServerCheckVisibility);
-
-
-#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_ACCESSORS
-#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_CALLBACK_WRAPPERS
-#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_INCLASS_NO_PURE_DECLS \
+#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_33_SPARSE_DATA
+#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_33_RPC_WRAPPERS
+#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_33_RPC_WRAPPERS_NO_PURE_DECLS
+#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_33_ACCESSORS
+#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_33_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesALandscapeGenerator(); \
 	friend struct Z_Construct_UClass_ALandscapeGenerator_Statics; \
@@ -42,7 +27,7 @@ public: \
 	DECLARE_SERIALIZER(ALandscapeGenerator)
 
 
-#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_INCLASS \
+#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_33_INCLASS \
 private: \
 	static void StaticRegisterNativesALandscapeGenerator(); \
 	friend struct Z_Construct_UClass_ALandscapeGenerator_Statics; \
@@ -51,7 +36,7 @@ public: \
 	DECLARE_SERIALIZER(ALandscapeGenerator)
 
 
-#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_STANDARD_CONSTRUCTORS \
+#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_33_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ALandscapeGenerator(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ALandscapeGenerator) \
@@ -65,7 +50,7 @@ public: \
 	NO_API virtual ~ALandscapeGenerator();
 
 
-#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_ENHANCED_CONSTRUCTORS \
+#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_33_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ALandscapeGenerator(ALandscapeGenerator&&); \
@@ -77,29 +62,27 @@ public: \
 	NO_API virtual ~ALandscapeGenerator();
 
 
-#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_28_PROLOG
-#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_GENERATED_BODY_LEGACY \
+#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_30_PROLOG
+#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_33_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_SPARSE_DATA \
-	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_RPC_WRAPPERS \
-	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_ACCESSORS \
-	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_CALLBACK_WRAPPERS \
-	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_INCLASS \
-	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_STANDARD_CONSTRUCTORS \
+	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_33_SPARSE_DATA \
+	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_33_RPC_WRAPPERS \
+	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_33_ACCESSORS \
+	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_33_INCLASS \
+	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_33_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_GENERATED_BODY \
+#define FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_33_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_SPARSE_DATA \
-	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_ACCESSORS \
-	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_CALLBACK_WRAPPERS \
-	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_INCLASS_NO_PURE_DECLS \
-	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_31_ENHANCED_CONSTRUCTORS \
+	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_33_SPARSE_DATA \
+	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_33_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_33_ACCESSORS \
+	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_33_INCLASS_NO_PURE_DECLS \
+	FID_GitHub_AGPAssignment4_AGP_Source_AGP_LandscapeGenerator_h_33_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

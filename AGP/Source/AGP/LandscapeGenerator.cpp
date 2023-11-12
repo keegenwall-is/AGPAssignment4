@@ -14,7 +14,9 @@
 #include "Room5Class.h"
 #include "TableChairClass.h"
 #include "TableClass.h"
+#include "Pickups/WeaponPickup.h"
 #include "Characters/EnemyCharacter.h"
+#include "GameFramework/PlayerStart.h"
 #include "Kismet/KismetMathLibrary.h"
 
 class UPathfindingSubsystem;
@@ -30,51 +32,31 @@ ALandscapeGenerator::ALandscapeGenerator()
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	bNetLoadOnClient = false;
+	//bNetLoadOnClient = false;
 }
 
 // Called when the game starts or when spawned
 void ALandscapeGenerator::BeginPlay()
 {
-
-	
-	
-	
 	Super::BeginPlay();
-	
 
-	if (GetLocalRole() != ROLE_Authority)
+	if (GetLocalRole() == ROLE_Authority)
 	{    
-		return;
-	}
+		PopulateArray();
+		StartPoint = AllOptions[1];
+		EndPoint = AllOptions[AllOptions.Num()-1];
 	
-	pathfindingSubsystem = GetWorld()->GetSubsystem<UPathfindingSubsystem>();
-	pathfindingSubsystem->PlaceProceduralNodes(width, height);
-	pathfindingSubsystem->PopulateNodes();
-	/*
-	for (TActorIterator<APlayerCharacter> It(GetWorld()); It; ++It)
-	{
-		players.Add(*It);
-	}
+		pathfindingSubsystem = GetWorld()->GetSubsystem<UPathfindingSubsystem>();
+		pathfindingSubsystem->PlaceProceduralNodes(width, height);
+		//pathfindingSubsystem->PopulateNodes();
 	
-	for (APlayerCharacter* player : players)
-	{
-		player->SetActorLocation(StartPoint);
+		SpawnOutside();
+		PopulateArray();
+		if (DoDebug) { DrawGrid(); }
+		DrawPath();
+		GenerateRooms();
+		SpawnPickups();
 	}
-
-	for (TActorIterator<AEnemyCharacter> It(GetWorld()); It; ++It)
-	{
-		enemies.Add(*It);
-	}
-	
-	for (AEnemyCharacter* enemy : enemies)
-	{
-		enemy->SetActorLocation(EndPoint);
-	}*/
-
-	//ServerCheckVisibility();
-	GenerateWorld();
-	
 }
 
 bool ALandscapeGenerator::ShouldTickIfViewportsOnly() const
@@ -87,26 +69,6 @@ void ALandscapeGenerator::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-}
-
-void ALandscapeGenerator::GenerateWorld()
-{
-	SpawnOutside();
-	PopulateArray();
-	if (DoDebug) { DrawGrid(); }
-	DrawPath();
-	GenerateRooms();
-	SpawnLamps();
-}
-
-void ALandscapeGenerator::MulticastCheckVisibility_Implementation()
-{
-	GenerateWorld();
-}
-
-void ALandscapeGenerator::ServerCheckVisibility_Implementation()
-{
-	MulticastCheckVisibility();
 }
 
 void ALandscapeGenerator::SpawnOutside()
@@ -213,21 +175,19 @@ void ALandscapeGenerator::DrawPath()
 	if (pathfindingSubsystem)
 	{
 		// first sections of the two goal paths
-		StartPoint = AllOptions[UKismetMathLibrary::RandomInteger(6)];
-		int k = UKismetMathLibrary::RandomInteger(6);
+		int k = UKismetMathLibrary::RandomInteger(Edges2.Num());
 		Path1 = pathfindingSubsystem->GetPath(StartPoint, Edges2[k]);
 		
-		k = UKismetMathLibrary::RandomInteger(6);
+		k = UKismetMathLibrary::RandomInteger(Edges3.Num());
 		Path2 = pathfindingSubsystem->GetPath(StartPoint, Edges3[k]);
 		
 
 		//second sections of the paths
-		EndPoint = AllOptions[AllOptions.Num()-1-(UKismetMathLibrary::RandomInteger(6))];
 		TempPath1 = pathfindingSubsystem->GetPath(Path1[0], EndPoint);
 		FVector MidPoint = Edges4[UKismetMathLibrary::RandomInteger(4)];
 		while (MidPoint == EndPoint)
 		{
-			MidPoint = Edges4[UKismetMathLibrary::RandomInteger(4)];
+			MidPoint = Edges4[UKismetMathLibrary::RandomInteger(3)];
 		}
 		TempPath2 = pathfindingSubsystem->GetPath(Path2[0], MidPoint);
 
@@ -252,11 +212,26 @@ void ALandscapeGenerator::DrawPath()
 				Path2.Add(p);
 		}
 
-		for (FVector p : Path2)
+		for (FVector p : Path1)
 		{
-			if (Path1.Contains(p))
+			if (Path2.Contains(p))
 			{
 				Path2.Remove(p);
+			}
+		}
+
+		for (FVector p : Path1)
+		{
+			if (!TotalPath.Contains(p))
+			{
+				TotalPath.Add(p);
+			}
+		}
+		for (FVector p : Path2)
+		{
+			if (!TotalPath.Contains(p))
+			{
+				TotalPath.Add(p);
 			}
 		}
 	}
@@ -292,15 +267,33 @@ void ALandscapeGenerator::GenerateRooms()
 	}
 }
 
-void ALandscapeGenerator::SpawnLamps()
+void ALandscapeGenerator::SpawnPickups()
 {
 	const UPCGGameInstance* GameInstance = GetWorld()->GetGameInstance<UPCGGameInstance>();
 
 	int i = UKismetMathLibrary::RandomInteger(Path1.Num());
 	int j = UKismetMathLibrary::RandomInteger(Path2.Num());
 	
-	GetWorld()->SpawnActor<ALampPickup>(GameInstance->GetLampPickupClass(), Path1[i], FRotator(0, 45, 0));
-	GetWorld()->SpawnActor<ALampPickup>(GameInstance->GetLampPickupClass(), Path2[j], FRotator(0, 45, 0));
+	GetWorld()->SpawnActor<ALampPickup>(GameInstance->GetLampPickupClass(), FVector(Path1[i].X+300, Path1[i].Y+300, Path1[i].Z), FRotator(0, 45, 0));
+	GetWorld()->SpawnActor<ALampPickup>(GameInstance->GetLampPickupClass(), FVector(Path2[j].X+300, Path2[j].Y+300, Path2[j].Z), FRotator(0, 45, 0));
+
+	TArray<int32> positions;
+	for (int k = 0; k < 3; k++)
+	{
+		int r = UKismetMathLibrary::RandomInteger(TotalPath.Num());
+		if (k >= 1 && positions.Contains(r))
+		{
+			r = UKismetMathLibrary::RandomInteger(TotalPath.Num());
+			k--;
+		}
+		positions.Add(r);
+	}
+
+	for (int32 p : positions)
+	{
+		GetWorld()->SpawnActor<AWeaponPickup>(GameInstance->GetWeaponPickupClass(), FVector(TotalPath[p].X, TotalPath[p].Y, TotalPath[p].Z+50), FRotator::ZeroRotator);
+	}
+
 }
 
 

@@ -52,6 +52,7 @@ void UPathfindingSubsystem::PopulateNodes()
 		Nodes.Add(*It);
 		UE_LOG(LogTemp, Warning, TEXT("NODE: %s"), *(*It)->GetActorLocation().ToString())
 	}
+	
 }
 
 void UPathfindingSubsystem::DeleteOtherNodes(TArray<FVector> Path1, TArray<FVector> Path2)
@@ -135,6 +136,10 @@ ANavigationNode* UPathfindingSubsystem::FindNearestNode(const FVector& TargetLoc
 	float MinDistance = UE_MAX_FLT;
 	for (ANavigationNode* Node : Nodes)
 	{
+		if (Node == nullptr)
+		{
+			UE_LOG(LogTemp, Error, TEXT("nothing."))
+		}
 		const float Distance = FVector::Distance(TargetLocation, Node->GetActorLocation());
 		if (Distance < MinDistance)
 		{
@@ -398,5 +403,6 @@ void UPathfindingSubsystem::PlaceProceduralNodes(int32 MapWidth, int32 MapHeight
 			}
 		}
 	}
+	PopulateNodes();
 }
 

@@ -145,6 +145,7 @@ public:
 	bool bFromThird = false;
 
 	float GuardTimer = 0.0f;
+	
 
 private:
 	
@@ -152,7 +153,8 @@ private:
 	 * NOT USED ANYMORE - Was used for TickEvade and TickEngage before we setup the UPawnSensingComponent.
 	 * @return A pointer to one APlayerCharacter actor in the world.
 	 */
-	
+	bool canTick = false;
+	void CanTick();
 	
 	APlayerCharacter* FindPlayer() const;
 

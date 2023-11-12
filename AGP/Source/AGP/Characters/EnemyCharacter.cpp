@@ -16,16 +16,16 @@ AEnemyCharacter::AEnemyCharacter()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	bNetLoadOnClient = false;
+	//bNetLoadOnClient = false;
 	PawnSensingComponent = CreateDefaultSubobject<UPawnSensingComponent>("Pawn Sensing Component");
 }
 
 // Called when the game starts or when spawned
 void AEnemyCharacter::BeginPlay()
 {
-	
-	Super::BeginPlay();
 	if (GetLocalRole() != ROLE_Authority) return;
+	Super::BeginPlay();
+	
 
 	PathfindingSubsystem = GetWorld()->GetSubsystem<UPathfindingSubsystem>();
 	if (PathfindingSubsystem)
@@ -39,6 +39,11 @@ void AEnemyCharacter::BeginPlay()
 	{
 		PawnSensingComponent->OnSeePawn.AddDynamic(this, &AEnemyCharacter::OnSensedPawn);
 	}
+	if (GetLocalRole() == ROLE_Authority) {
+		FTimerHandle TimerHandle = FTimerHandle();
+		GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AEnemyCharacter::CanTick, 1.0f);
+	}
+	
 }
 
 void AEnemyCharacter::MoveAlongPath()
@@ -73,13 +78,35 @@ void AEnemyCharacter::TickPatrol()
 void AEnemyCharacter::TickEngage()
 {
 	
+	float NearestDistance = MAX_FLT;
+	APlayerCharacter* NearestCharacter = nullptr;
+    
 	if (!SensedCharacter) return;
 
 	CheckVisibility();
-	
+
+	TArray<APlayerCharacter*> Players;
+	for (TActorIterator<APlayerCharacter> It(GetWorld()); It; ++It)
+	{
+		Players.Add(*It);
+	}
+    
+	for (APlayerCharacter* Player : Players)
+	{
+		if (Player)
+		{
+			float Distance = FVector::Dist(this->GetActorLocation(), Player->GetActorLocation());
+			if (Distance < NearestDistance)
+			{
+				NearestDistance = Distance;
+				NearestCharacter = Player;
+			}
+		}
+	}
+
 	if (CurrentPath.IsEmpty())
 	{
-		CurrentPath = PathfindingSubsystem->GetPath(GetActorLocation(), SensedCharacter->GetActorLocation());
+		CurrentPath = PathfindingSubsystem->GetPath(GetActorLocation(), NearestCharacter->GetActorLocation());
 	}
 	MoveAlongPath();
 	//Fire();
@@ -194,68 +221,78 @@ void AEnemyCharacter::OnBellHeard(float Volume)
 // Called every frame
 void AEnemyCharacter::Tick(float DeltaTime)
 {
-	Super::Tick(DeltaTime);
-	if (GetLocalRole() != ROLE_Authority) return;
-	
-	UpdateSight();
-	
-	switch(CurrentState)
+	if (GetLocalRole() == ROLE_Authority)
 	{
-	case EEnemyState::Patrol:
-		TickPatrol();
-		this->SetActorHiddenInGame(false);
-		//UE_LOG(LogTemp, Display, TEXT("Patrolling"))
-		if (SensedCharacter)
+		if (!canTick)
 		{
-			if (HealthComponent->GetCurrentHealthPercentage() >= 0.4f)
+			return;
+		}
+	
+		Super::Tick(DeltaTime);
+		if (GetLocalRole() != ROLE_Authority) return;
+	
+		UpdateSight();
+	
+		switch(CurrentState)
+		{
+		case EEnemyState::Patrol:
+			TickPatrol();
+			this->SetActorHiddenInGame(false);
+			//UE_LOG(LogTemp, Display, TEXT("Patrolling"))
+			if (SensedCharacter)
 			{
-				CurrentState = EEnemyState::Engage;
-			} else
-			{
-				CurrentState = EEnemyState::Evade;
+				if (HealthComponent->GetCurrentHealthPercentage() >= 0.4f)
+				{
+					CurrentState = EEnemyState::Engage;
+				} else
+				{
+					CurrentState = EEnemyState::Evade;
+				}
+				CurrentPath.Empty();
 			}
-			CurrentPath.Empty();
-		}
-		break;
-	case EEnemyState::Engage:
-		TickEngage();
-		//UE_LOG(LogTemp, Display, TEXT("Engaging"))
+			break;
+		case EEnemyState::Engage:
+			TickEngage();
+			//UE_LOG(LogTemp, Display, TEXT("Engaging"))
 		
-		if (!SensedCharacter)
-		{
-			CurrentState = EEnemyState::Patrol;
+			if (!SensedCharacter)
+			{
+				CurrentState = EEnemyState::Patrol;
+			}
+			break;
+		case EEnemyState::Evade:
+			TickEvade();
+			//UE_LOG(LogTemp, Display, TEXT("Evading"))
+			this->SetActorHiddenInGame(false);
+			if (CurrentPath.IsEmpty())
+			{
+				CurrentState = EEnemyState::Patrol;
+			}
+			break;
+		case EEnemyState::Investigate:
+			TickInvestigate();
+			//UE_LOG(LogTemp, Display, TEXT("Investigating"))
+			this->SetActorHiddenInGame(false);
+			if (CurrentPath.IsEmpty())
+			{
+				CurrentState = EEnemyState::Guard;
+			}
+			break;
+		case EEnemyState::Guard:
+			TickGuard();
+			GuardTimer = GuardTimer + 1 * DeltaTime;
+			if (GuardTimer > 10)
+			{
+				GuardTimer = 0;
+				CurrentState = EEnemyState::Patrol;
+			}
+			UE_LOG(LogTemp, Display, TEXT("Guarding"))
+			this->SetActorHiddenInGame(false);
+			break;
 		}
-		break;
-	case EEnemyState::Evade:
-		TickEvade();
-		//UE_LOG(LogTemp, Display, TEXT("Evading"))
-		this->SetActorHiddenInGame(false);
-		if (CurrentPath.IsEmpty())
-		{
-			CurrentState = EEnemyState::Patrol;
-		}
-		break;
-	case EEnemyState::Investigate:
-		TickInvestigate();
-		//UE_LOG(LogTemp, Display, TEXT("Investigating"))
-		this->SetActorHiddenInGame(false);
-		if (CurrentPath.IsEmpty())
-		{
-			CurrentState = EEnemyState::Guard;
-		}
-		break;
-	case EEnemyState::Guard:
-		TickGuard();
-		GuardTimer = GuardTimer + 1 * DeltaTime;
-		if (GuardTimer > 10)
-		{
-			GuardTimer = 0;
-			CurrentState = EEnemyState::Patrol;
-		}
-		UE_LOG(LogTemp, Display, TEXT("Guarding"))
-		this->SetActorHiddenInGame(false);
-		break;
 	}
+	
+	
 }
 
 // Called to bind functionality to input
@@ -263,6 +300,11 @@ void AEnemyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+void AEnemyCharacter::CanTick()
+{
+	canTick = true;
 }
 
 APlayerCharacter* AEnemyCharacter::FindPlayer() const

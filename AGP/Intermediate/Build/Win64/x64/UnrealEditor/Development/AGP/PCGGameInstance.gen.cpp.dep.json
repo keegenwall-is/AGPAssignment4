@@ -19,6 +19,10 @@
             "d:\\github\\agpassignment4\\agp\\intermediate\\build\\win64\\unrealeditor\\inc\\agp\\uht\\room5class.generated.h",
             "d:\\github\\agpassignment4\\agp\\source\\agp\\emptyroomclass.h",
             "d:\\github\\agpassignment4\\agp\\intermediate\\build\\win64\\unrealeditor\\inc\\agp\\uht\\emptyroomclass.generated.h",
+            "d:\\github\\agpassignment4\\agp\\source\\agp\\pickups\\weaponpickup.h",
+            "d:\\github\\agpassignment4\\agp\\source\\agp\\pickups\\pickupbase.h",
+            "d:\\github\\agpassignment4\\agp\\intermediate\\build\\win64\\unrealeditor\\inc\\agp\\uht\\pickupbase.generated.h",
+            "d:\\github\\agpassignment4\\agp\\intermediate\\build\\win64\\unrealeditor\\inc\\agp\\uht\\weaponpickup.generated.h",
             "d:\\github\\agpassignment4\\agp\\intermediate\\build\\win64\\unrealeditor\\inc\\agp\\uht\\pcggameinstance.generated.h"
         ],
         "ImportedModules": [],

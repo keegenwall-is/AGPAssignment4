@@ -10,6 +10,7 @@
 #include "Room4Class.h"
 #include "Room5Class.h"
 #include "EmptyRoomClass.h"
+#include "Pickups/WeaponPickup.h"
 #include "PCGGameInstance.generated.h"
 
 class ARoom1Class;
@@ -21,6 +22,7 @@ class ATableClass;
 class ATableChairClass;
 class AEmptyRoomClass;
 class ALampPickup;
+class AWeaponPickup;
 /**
  *
  */
@@ -39,6 +41,7 @@ public:
 	UClass* GetTableChairClass() const;
 	UClass* GetEmptyRoomClass() const;
 	UClass* GetLampPickupClass() const;
+	UClass* GetWeaponPickupClass() const;
 
 protected:
 	UPROPERTY(EditDefaultsOnly, Category = "Room Classes")
@@ -67,4 +70,7 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Object Classes")
 	TSubclassOf<ALampPickup> LampPickupClass;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Object Classes")
+	TSubclassOf<AWeaponPickup> WeaponPickupClass;
 };
